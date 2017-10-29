@@ -54,8 +54,16 @@ class DatabaseController: NSObject {
                                         let budgetUsed = dict["budgetUsed"] as! Double
                                         let notificationPercent = dict["notificationPercent"] as! Double
                                         let notificationFrequency = dict["notificationFrequency"] as! String
+                                        let recentIntervalReset = dict["recentIntervalReset"] as! String
+                                        let nextIntervalReset = dict["nextIntervalReset"] as! String
+                                        let nextFixedReset = dict["nextFixedReset"] as! String
+                                        let nextDateReset = dict["nextDateReset"] as! String
                                         let categoryArray = [String : Category]()
-                                        let newBudget = Budget(name: bName, intervalStartDate: startDate, intervalResetOn: resetOn, alwaysResetOn: alwaysResetOn, resetInterval: resetInterval, budgetAmount: budgetAmount, budgetUsed: budgetUsed, notificationPercent: notificationPercent, notificationFrequency: notificationFrequency, categoryList: categoryArray)
+                                        var newBudget = Budget(name: bName, intervalStartDate: startDate, intervalResetOn: resetOn, alwaysResetOn: alwaysResetOn, resetInterval: resetInterval, budgetAmount: budgetAmount, budgetUsed: budgetUsed, notificationPercent: notificationPercent, notificationFrequency: notificationFrequency, categoryList: categoryArray)
+                                        newBudget.recentIntervalResetString = recentIntervalReset
+                                        newBudget.nextIntervalResetString = nextFixedReset
+                                        newBudget.nextFixedResetString = nextFixedReset
+                                        newBudget.nextDateResetString = nextDateReset
                                         Dummy.user.budgetList[bName] = newBudget
                                     }
                                 }
@@ -263,7 +271,7 @@ class DatabaseController: NSObject {
                     }
                     categoryData = ["name":categoryObject.name, "amountLimit":categoryObject.amountLimit, "amountUsed": categoryObject.amountUsed, "notificationPercent": categoryObject.notificationPercent] as [String : Any]
                 }
-                let budgetData = ["name": budgetObject.name, "startDate": budgetObject.intervalStartDate, "resetOn": budgetObject.intervalResetOn, "alwaysResetOn": budgetObject.alwaysResetOn, "resetInterval": budgetObject.resetInterval, "budgetAmount": budgetObject.budgetAmount, "budgetUsed": budgetObject.budgetUsed, "notificationPercent": budgetObject.notificationPercent, "notificationFrequency": budgetObject.notificationFrequency] as [String : Any]
+                let budgetData = ["name": budgetObject.name, "startDate": budgetObject.intervalStartDate, "resetOn": budgetObject.intervalResetOn, "alwaysResetOn": budgetObject.alwaysResetOn, "resetInterval": budgetObject.resetInterval, "budgetAmount": budgetObject.budgetAmount, "budgetUsed": budgetObject.budgetUsed, "notificationPercent": budgetObject.notificationPercent, "notificationFrequency": budgetObject.notificationFrequency, "recentIntervalReset": budgetObject.recentIntervalResetString, "nextIntervalReset": budgetObject.nextIntervalResetString, "nextFixedReset": budgetObject.nextFixedResetString, "nextDateReset": budgetObject.nextDateResetString] as [String : Any]
                 
                 self.ref.child("Budgets").child(budgetName).setValue(budgetData)
                 
