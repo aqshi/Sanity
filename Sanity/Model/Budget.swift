@@ -97,7 +97,7 @@ struct Budget{
         print(self.nextDateResetString)
         print(self.nextFixedResetString)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         self.recentIntervalReset = dateFormatter.date(from:self.recentIntervalResetString)!
         self.nextIntervalReset = dateFormatter.date(from:self.nextIntervalResetString)!
         self.nextDateReset = dateFormatter.date(from:self.nextDateResetString)!
