@@ -21,7 +21,7 @@ struct Budget{
                notificationFrequency: String,
                categoryList: [String : Category]) {
         
-        
+        print("11111111111")
         //self.budgetID = budgetID
         self.name = name
         
@@ -59,6 +59,53 @@ struct Budget{
         
         
     }
+    
+    init(name: String,
+        intervalStartDate: String,     //Initial day to begin interval
+        intervalResetOn: Int,  //Day we need to reset (P2)
+        alwaysResetOn: String, //Always Reset on This date (P1)
+        resetInterval: String, //How often to reset
+        budgetAmount: Double,
+        budgetUsed: Double,
+        notificationPercent: Double,
+        notificationFrequency: String,
+        recentIntervalReset: String,
+        nextIntervalReset: String,
+        nextFixedReset: String,
+        nextDateReset: String,
+        categoryList: [String : Category])  {
+        print("2222222222")
+        self.name = name
+        self.budgetAmount = budgetAmount
+        self.budgetUsed = budgetUsed
+        self.notificationPercent = notificationPercent
+        self.notificationFrequency = notificationFrequency
+        self.categoryList = categoryList
+        
+        
+        self.alwaysResetOn = alwaysResetOn     //Always Reset on This date (P1)
+        self.intervalResetOn = intervalResetOn //Day we need to reset (P2)
+        self.intervalStartDate = intervalStartDate //Initial day to begin interval
+        self.resetInterval = resetInterval //How often to reset
+        
+        self.recentIntervalResetString = recentIntervalReset
+        self.nextIntervalResetString = nextIntervalReset
+        self.nextFixedResetString = nextFixedReset
+        self.nextDateResetString = nextDateReset
+        print(self.recentIntervalResetString)
+        print(self.nextIntervalResetString)
+        print(self.nextDateResetString)
+        print(self.nextFixedResetString)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        self.recentIntervalReset = dateFormatter.date(from:self.recentIntervalResetString)!
+        self.nextIntervalReset = dateFormatter.date(from:self.nextIntervalResetString)!
+        self.nextDateReset = dateFormatter.date(from:self.nextDateResetString)!
+        self.nextFixedReset = dateFormatter.date(from:self.nextFixedResetString)!
+
+
+    }
+    
     
     //var budgetID: String
     var name: String
