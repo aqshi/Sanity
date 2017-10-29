@@ -74,9 +74,13 @@ class TransactionCreationViewController: UIViewController {
         print(amnt)
         print(desc)
         let purchase = Purchase(name: name , price: amnt ,date: selectedDate, memo: desc)
-    Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList[name] = purchase
+        Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList[name] = purchase
+        Dummy.user2 = Dummy.user
         //User.purchaseOverLimitNotification()
-        
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Add purchase \(Dummy.user)")
+        }
         //Next, Let's update the previous page! the Category creation Page!
         let updater = NSNotification.Name("reloadCat")
         NotificationCenter.default.post(name: updater, object: nil)

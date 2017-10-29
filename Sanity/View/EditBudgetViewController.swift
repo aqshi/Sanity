@@ -164,7 +164,7 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
         Dummy.user.budgetList[globalBudget]?.notificationFrequency = String(NFSegment.selectedSegmentIndex)
         
         Dummy.user.budgetList[globalBudget]?.update()
-        
+        Dummy.user2 = Dummy.user
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
             print("Updated \(Dummy.user)")

@@ -171,6 +171,7 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
             Dummy.user.budgetList[budgetName!] = newBudget
             Dummy.currentBudgetName = budgetName!
             globalBudget = budgetName!
+            Dummy.user2 = Dummy.user
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
         }
     }
