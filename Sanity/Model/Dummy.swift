@@ -14,5 +14,6 @@ class Dummy{
     static var currentCategoryName = ""
     static var currentPurchaseName = ""
     static var delay = false
+    static var intervalStartDate = [String: String]()
 }
 

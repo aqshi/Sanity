@@ -188,7 +188,6 @@ struct Budget{
         var components = gregorian.dateComponents([.year, .month, .day], from: now)
         
         print(actingARD + " ACTINGARD")
-        
         if( actingARD != "0"){
             components.day = Int(actingARD)!
             self.nextFixedReset = gregorian.date(from: components)!
@@ -260,36 +259,79 @@ struct Budget{
         }
         
         let daysOfWeek = ["z","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+
         if(resetInterval == "0"){
-            if( self.intervalStartDate != ""){
-                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(intervalStartDate)!]) as Date
-                self.recentIntervalReset = get(direction: .Previous, daysOfWeek[Int(intervalStartDate)!]) as Date
+            if(self.intervalStartDate == "" && Dummy.intervalStartDate[self.name] != nil){
+                self.intervalStartDate = Dummy.intervalStartDate[self.name]!
+            }
+            Dummy.intervalStartDate[self.name] = self.intervalStartDate
+            if(self.intervalStartDate != ""){
+                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(self.intervalStartDate)!]) as Date
+                self.recentIntervalReset = get(direction: .Previous, daysOfWeek[Int(self.intervalStartDate)!]) as Date
                 self.intervalStartDate = ""
+            } else {
+                self.intervalStartDate = ""
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd MMM yyyy"
+                let someDateTime = formatter.date(from: "01 Jan 9999")
+                self.nextIntervalReset = someDateTime!
+                self.recentIntervalReset = someDateTime!
             }
         }
         else if(resetInterval == "1"){
-            if( self.intervalStartDate != ""){
-                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(intervalStartDate)!]) as Date
-                self.recentIntervalReset = get2previous(direction: .Previous, daysOfWeek[Int(intervalStartDate)!]) as Date
+            if(self.intervalStartDate == "" && Dummy.intervalStartDate[self.name] != nil){
+                self.intervalStartDate = Dummy.intervalStartDate[self.name]!
+            }
+            Dummy.intervalStartDate[self.name] = self.intervalStartDate
+            if(self.intervalStartDate != ""){
+                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(self.intervalStartDate)!]) as Date
+                self.recentIntervalReset = get2previous(direction: .Previous, daysOfWeek[Int(self.intervalStartDate)!]) as Date
                 self.intervalStartDate = ""
+            } else {
+                self.intervalStartDate = ""
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd MMM yyyy"
+                let someDateTime = formatter.date(from: "01 Jan 9999")
+                self.nextIntervalReset = someDateTime!
+                self.recentIntervalReset = someDateTime!
             }
         }
         else if(resetInterval == "2"){
-            if( self.intervalStartDate != ""){
-                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(intervalStartDate)!]) as Date
-                self.recentIntervalReset = get3previous(direction: .Previous, daysOfWeek[Int(intervalStartDate)!]) as Date
+            if(self.intervalStartDate == "" && Dummy.intervalStartDate[self.name] != nil){
+                self.intervalStartDate = Dummy.intervalStartDate[self.name]!
+            }
+            Dummy.intervalStartDate[self.name] = self.intervalStartDate
+            if(self.intervalStartDate != ""){
+                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(self.intervalStartDate)!]) as Date
+                self.recentIntervalReset = get3previous(direction: .Previous, daysOfWeek[Int(self.intervalStartDate)!]) as Date
                 self.intervalStartDate = ""
+            } else {
+                self.intervalStartDate = ""
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd MMM yyyy"
+                let someDateTime = formatter.date(from: "01 Jan 9999")
+                self.nextIntervalReset = someDateTime!
+                self.recentIntervalReset = someDateTime!
             }
         }
         else if(resetInterval == "3"){
-            if( self.intervalStartDate != ""){
-                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(intervalStartDate)!]) as Date
-                self.recentIntervalReset = get4previous(direction: .Previous, daysOfWeek[Int(intervalStartDate)!]) as Date
+            if(self.intervalStartDate == "" && Dummy.intervalStartDate[self.name] != nil){
+                self.intervalStartDate = Dummy.intervalStartDate[self.name]!
+            }
+            Dummy.intervalStartDate[self.name] = self.intervalStartDate
+            if(self.intervalStartDate != ""){
+                self.nextIntervalReset = get(direction: .Next, daysOfWeek[Int(self.intervalStartDate)!]) as Date
+                self.recentIntervalReset = get4previous(direction: .Previous, daysOfWeek[Int(self.intervalStartDate)!]) as Date
                 self.intervalStartDate = ""
+            } else {
+                self.intervalStartDate = ""
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd MMM yyyy"
+                let someDateTime = formatter.date(from: "01 Jan 9999")
+                self.nextIntervalReset = someDateTime!
+                self.recentIntervalReset = someDateTime!
             }
         }
-
-        
         
         return 0
     }

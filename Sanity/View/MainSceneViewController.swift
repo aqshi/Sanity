@@ -13,16 +13,12 @@ import GoogleSignIn
 
 class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     
-    var refreshControl = UIRefreshControl()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = 100
         //register the custom cell for use as a normal prototype
         let nibName = UINib(nibName: "budCell", bundle: nil)
         myTableView.register(nibName, forCellReuseIdentifier: "budCell")
-        self.myTableView.addSubview(self.refreshControl)
-        //loadCustomRefreshContents()
         //so we can refresh this view form somewhere else
         print("RELOAD")
         let updater = NSNotification.Name("reloadMain")
