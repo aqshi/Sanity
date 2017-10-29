@@ -161,6 +161,11 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
         }
         
         Dummy.user.budgetList[globalBudget]?.update()
+        
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Updated \(Dummy.user)")
+        }
     }
     
     
