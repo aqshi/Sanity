@@ -23,7 +23,7 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
         dayPicker.dataSource = self
         fixedDatePicker.dataSource = self
         
-        
+        NFSegment.selectedSegmentIndex = Int((Dummy.user.budgetList[globalBudget]?.notificationFrequency)!)!
         
         // Do any additional setup after loading the view.
     }
@@ -160,6 +160,9 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
             Dummy.user.budgetList[globalBudget]?.calcInterval()
         }
         
+        //the NFFrequency
+        Dummy.user.budgetList[globalBudget]?.notificationFrequency = String(NFSegment.selectedSegmentIndex)
+        
         Dummy.user.budgetList[globalBudget]?.update()
         
         DispatchQueue.main.async {
@@ -198,6 +201,10 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
         canChangeWarning = true
         
     }
+    
+    
+    //Notification Frequency
+    @IBOutlet weak var NFSegment: UISegmentedControl!
     
     
 }

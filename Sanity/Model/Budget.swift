@@ -167,6 +167,13 @@ struct Budget{
         calcTotal()
         calculateNearestDate()
         //recoverDateObjects()
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        let currentDateString = formatter.string(from: currentDate)
+        if(self.nextDateResetString == currentDateString){
+        calculateReset()
+        }
         return 0
     }
     
@@ -183,6 +190,74 @@ struct Budget{
         return 0
     }
     
+    mutating func calculateReset(){
+        
+        //get the current date
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        let currentDateString = formatter.string(from: currentDate)
+        
+        //if the next date reset = Today!?
+        if(self.nextDateResetString == currentDateString){
+            //delete all of my purchases
+            for( String , _) in self.categoryList {
+                for(String2 , _) in (self.categoryList[String]?.purchaseList)!{
+                    self.categoryList[String]?.purchaseList.removeValue(forKey: String2)
+                }
+            }
+        }
+        
+        //I deleted all of my Purchases. Now I have to move intervalReset forward
+        if(self.resetInterval == "0"){
+            var dateComponent = DateComponents()
+            dateComponent.day = 7
+            let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextIntervalReset)
+            self.nextIntervalReset = futureDate!
+        }
+        else if (self.resetInterval == "1"){
+            var dateComponent = DateComponents()
+            dateComponent.day = 14
+            let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextIntervalReset)
+            self.nextIntervalReset = futureDate!
+        }
+        else if (self.resetInterval == "2"){
+            var dateComponent = DateComponents()
+            dateComponent.day = 21
+            let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextIntervalReset)
+            self.nextIntervalReset = futureDate!
+        }
+        else if (self.resetInterval == "3"){
+            var dateComponent = DateComponents()
+            dateComponent.day = 28
+            let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextIntervalReset)
+            self.nextIntervalReset = futureDate!
+        }
+        
+        //move FDR forward one month
+        var dateComponent = DateComponents()
+        dateComponent.month = 1
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextFixedReset)
+        self.nextFixedReset = futureDate!
+        
+        
+        if (self.nextFixedReset < self.nextIntervalReset){
+            self.nextDateReset = self.nextFixedReset
+        }
+        else {
+            self.nextDateReset = self.nextIntervalReset
+        }
+        
+        //format it because we have to display it
+        self.nextDateResetString = formatter.string(from: self.nextDateReset)
+        print(nextDateResetString)
+        //stored here
+        self.recentIntervalResetString = formatter.string(from: recentIntervalReset)
+        self.nextIntervalResetString = formatter.string(from: nextIntervalReset)
+        self.nextFixedResetString = formatter.string(from: nextFixedReset)
+        
+        update()
+    }
     
     
     
@@ -292,6 +367,10 @@ struct Budget{
     
     mutating func calcInterval() -> Double {
         
+        
+        
+        
+        
         //if they selected "Don't", then we never use the interval start date
         if(self.intervalStartDate == "0"){
            self.intervalStartDate = ""
@@ -382,6 +461,9 @@ struct Budget{
         
         return 0
     }
+    
+    
+    
     
     
     

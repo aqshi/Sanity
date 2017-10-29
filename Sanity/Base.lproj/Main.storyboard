@@ -863,35 +863,17 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uJC-1S-Kfi">
-                                <rect key="frame" x="25" y="552" width="155" height="95"/>
+                                <rect key="frame" x="0.0" y="597" width="174" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZ8-ma-8wt">
-                                        <rect key="frame" x="17" y="25" width="118" height="45"/>
+                                        <rect key="frame" x="28" y="13" width="118" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" red="1" green="0.40623616629999998" blue="0.8333121778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <segue destination="M7u-uW-ibZ" kind="show" id="chR-4y-Rns"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRo-bs-BeC">
-                                <rect key="frame" x="204" y="552" width="155" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSe-ha-3Vy">
-                                        <rect key="frame" x="17" y="25" width="118" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Confirm">
-                                            <color key="titleShadowColor" red="1" green="0.40623616629999998" blue="0.8333121778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="confirmChanges:" destination="uOV-Ih-WkH" eventType="touchUpInside" id="IN9-qP-bgD"/>
-                                            <segue destination="M7u-uW-ibZ" kind="show" id="Yuh-RD-k8S"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1007,12 +989,48 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notification Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtC-K7-WhX">
+                                <rect key="frame" x="97" y="507" width="180" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I9H-PV-URs">
+                                <rect key="frame" x="25" y="536" width="329" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Never"/>
+                                    <segment title="Once"/>
+                                    <segment title="Always"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRo-bs-BeC">
+                                <rect key="frame" x="174" y="597" width="201" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSe-ha-3Vy">
+                                        <rect key="frame" x="41" y="13" width="118" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleShadowColor" red="1" green="0.40623616629999998" blue="0.8333121778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmChanges:" destination="uOV-Ih-WkH" eventType="touchUpInside" id="IN9-qP-bgD"/>
+                                            <segue destination="M7u-uW-ibZ" kind="show" id="Yuh-RD-k8S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="j9X-Kq-lym"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="9em-eX-GT2"/>
                     <connections>
+                        <outlet property="NFSegment" destination="I9H-PV-URs" id="F0i-0q-l1t"/>
                         <outlet property="button1" destination="PkW-aR-xY6" id="1Ba-0I-0jZ"/>
                         <outlet property="button2" destination="Uvy-vl-oGn" id="omT-YA-VZb"/>
                         <outlet property="button3" destination="C2M-g2-1qD" id="t63-As-5Pz"/>

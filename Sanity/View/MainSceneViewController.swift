@@ -76,7 +76,12 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
                 self.nameList.append(Name)
                 self.spentList.append(String(format:"%.2f",Budget.budgetUsed))
                 self.totalList.append(String(format:"%.2f",Budget.budgetAmount))
-                resetdatesList.append(Budget.nextDateResetString)
+                if(Budget.nextDateResetString != "01 Jan 9999"){
+                    resetdatesList.append(Budget.nextDateResetString)
+                }
+                else {
+                    resetdatesList.append("Never")
+                }
             }
             self.myTableView.reloadData()
             print("DONE")
@@ -149,7 +154,12 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
             nameList.append(Name)
             spentList.append(String(format:"%.2f",Budget.budgetUsed))
             totalList.append(String(format:"%.2f",Budget.budgetAmount))
-            resetdatesList.append(Budget.nextDateResetString)
+            if(Budget.nextDateResetString != "01 Jan 9999"){
+                resetdatesList.append(Budget.nextDateResetString)
+            }
+            else {
+                resetdatesList.append("Never")
+            }
         }
         myTableView.reloadData()
     }
