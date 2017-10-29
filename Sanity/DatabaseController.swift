@@ -59,12 +59,13 @@ class DatabaseController: NSObject {
                                         let nextFixedReset = dict["nextFixedReset"] as! String
                                         let nextDateReset = dict["nextDateReset"] as! String
                                         let categoryArray = [String : Category]()
-                                        var newBudget = Budget(name: bName, intervalStartDate: startDate, intervalResetOn: resetOn, alwaysResetOn: alwaysResetOn, resetInterval: resetInterval, budgetAmount: budgetAmount, budgetUsed: budgetUsed, notificationPercent: notificationPercent, notificationFrequency: notificationFrequency, categoryList: categoryArray)
-                                        newBudget.recentIntervalResetString = recentIntervalReset
-                                        newBudget.nextIntervalResetString = nextFixedReset
-                                        newBudget.nextFixedResetString = nextFixedReset
-                                        newBudget.nextDateResetString = nextDateReset
+                                        let newBudget = Budget(name: bName, intervalStartDate: startDate, intervalResetOn: resetOn, alwaysResetOn: alwaysResetOn, resetInterval: resetInterval, budgetAmount: budgetAmount, budgetUsed: budgetUsed, notificationPercent: notificationPercent, notificationFrequency: notificationFrequency, recentIntervalReset: recentIntervalReset, nextIntervalReset: nextIntervalReset, nextFixedReset: nextFixedReset, nextDateReset: nextDateReset, categoryList: categoryArray)
+//                                        newBudget.recentIntervalResetString = recentIntervalReset
+//                                        newBudget.nextIntervalResetString = nextFixedReset
+//                                        newBudget.nextFixedResetString = nextFixedReset
+//                                        newBudget.nextDateResetString = nextDateReset
                                         Dummy.user.budgetList[bName] = newBudget
+                                        print("Create \(newBudget)")
                                     }
                                 }
                             }
