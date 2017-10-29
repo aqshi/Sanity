@@ -166,7 +166,7 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
         let budgetName = nameField.text
         DispatchQueue.main.async {
             //declare newBudget
-            let newBudget = Budget(name: budgetName! , intervalStartDate: String(self.mystartDates), intervalResetOn:0, alwaysResetOn: String(self.mydates), resetInterval: String(self.myIntervals), budgetAmount: 0, budgetUsed: 0, notificationPercent: Double((self.percentChosen) * 5), notificationFrequency: "0", categoryList: [String : Category]())
+            let newBudget = Budget(name: budgetName! , intervalStartDate: String(self.mystartDates), intervalResetOn:0, alwaysResetOn: String(self.mydates), resetInterval: String(self.myIntervals), budgetAmount: 0, budgetUsed: 0, notificationPercent: Double((self.percentChosen) * 5), notificationFrequency: "1", categoryList: [String : Category]())
             
             Dummy.user.budgetList[budgetName!] = newBudget
             Dummy.currentBudgetName = budgetName!
