@@ -78,8 +78,13 @@ class TransactionPageViewController: UIViewController {
         if nametoStore != globalPurchase {
                    Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList.removeValue(forKey: globalPurchase)
                   }
+        Dummy.user2 = Dummy.user
         //reset the global Purchase
         globalPurchase = nametoStore
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Updated \(Dummy.user)")
+        }
     }
     
     

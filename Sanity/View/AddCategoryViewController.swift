@@ -56,7 +56,10 @@ class AddCategoryViewController: UIViewController {
         
         //add it to the current budget
         Dummy.user.budgetList[globalBudget]?.categoryList[nameField.text!] = cat
-        
+        Dummy.user2 = Dummy.user
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+        }
         //Update the previous page, the Budget Page
         let updater = NSNotification.Name("reloadBud")
         NotificationCenter.default.post(name: updater, object: nil)

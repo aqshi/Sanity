@@ -8,6 +8,7 @@
 import Foundation
 class Dummy{
     static var user = User()
+    static var user2 = User()
     static var dc = DatabaseController()
     
     static var currentBudgetName = ""

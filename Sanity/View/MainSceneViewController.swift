@@ -20,7 +20,6 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         let nibName = UINib(nibName: "budCell", bundle: nil)
         myTableView.register(nibName, forCellReuseIdentifier: "budCell")
         //so we can refresh this view form somewhere else
-        print("RELOAD")
         let updater = NSNotification.Name("reloadMain")
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: updater, object: nil)
     }
@@ -29,14 +28,10 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         print("BEGIN \(Dummy.user)")
         if(Dummy.delay == true) {
             self.numCells = Dummy.user.budgetList.count
-            print("TRUE")
-            print(Dummy.user)
-            print("TRUE2")
             self.numCells = Dummy.user.budgetList.count
             print(Dummy.user.budgetList.count)
             //ultimate Updater Block!
             for(String, _) in (Dummy.user.budgetList){
-                print("Budget")
                 for(String, _) in (Dummy.user.budgetList[String]?.categoryList)! {
                     Dummy.user.budgetList[globalBudget]?.categoryList[String]?.calcUsed()
                 }
@@ -57,7 +52,6 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
                 self.myTableView.reloadData()
             }
             Dummy.delay = false
-            print("DONE")
         } else {
             print("FALSE")
             self.numCells = Dummy.user.budgetList.count
@@ -84,7 +78,6 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
                 }
             }
             self.myTableView.reloadData()
-            print("DONE")
         }
     }
     
@@ -120,7 +113,6 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("CELL")
         print(self.nameList.count)
         print(self.resetdatesList.count)
         let cell = myTableView.dequeueReusableCell(withIdentifier: "budCell", for: indexPath) as! budCell
@@ -162,6 +154,11 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
             }
         }
         myTableView.reloadData()
+        Dummy.user2 = Dummy.user
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Deleted \(Dummy.user)")
+        }
     }
     
     
