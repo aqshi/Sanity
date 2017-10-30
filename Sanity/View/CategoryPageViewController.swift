@@ -19,7 +19,7 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
         
         //so we can refresh this view form somewhere else
         let updater = NSNotification.Name("reloadCat")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.viewDidLoad), name: updater, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.viewDidAppear(_:)), name: updater, object: nil)
         
         print(globalBudget)
         print(globalCat)
@@ -31,8 +31,11 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if(Dummy.user2.userID != "") {
+            Dummy.user = Dummy.user2
+        }
         if(Dummy.user.budgetList[globalBudget]!.categoryList.count > 0 ){
-            numCells = (Dummy.user.budgetList[globalBudget]!.categoryList[globalCat]!.purchaseList.count)
+            self.numCells = (Dummy.user.budgetList[globalBudget]!.categoryList[globalCat]!.purchaseList.count)
         }
         
         //ultimate Updater Block!
@@ -42,17 +45,17 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
             }
             Dummy.user.budgetList[String]?.update()
         }
-        
-        myTableView.reloadData()
-        
-        nameList.removeAll()
-        dateList.removeAll()
-        priceList.removeAll()
+            self.nameList.removeAll()
+            self.dateList.removeAll()
+            self.priceList.removeAll()
         
         for(String, Purchase) in (Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList)! {
-            nameList.append(String)
-            priceList.append((Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[String]?.price)!)
-            dateList.append((Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[String]?.date)!)
+            self.nameList.append(String)
+            self.priceList.append((Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[String]?.price)!)
+            self.dateList.append((Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[String]?.date)!)
+        }
+        DispatchQueue.main.async {
+            self.myTableView.reloadData()
         }
     }
     
@@ -64,6 +67,9 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
     var numCells : Int = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(Dummy.user2.userID != "") {
+            Dummy.user = Dummy.user2
+        }
         if(Dummy.user.budgetList[globalBudget]!.categoryList.count > 0 ){
             numCells = (Dummy.user.budgetList[globalBudget]!.categoryList[globalCat]!.purchaseList.count)
         } else{
@@ -89,14 +95,15 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
     
     //Remove Item Functionality
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
-        
         //first literally remove the item from the map
         let cell = myTableView.cellForRow(at: indexPath)
         let toRemove : String = (cell as! TransCell).nameLabel.text!
         Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList.removeValue(forKey: toRemove)
-        myTableView.deleteRows(at: [indexPath] , with: UITableViewRowAnimation.fade )
+        Dummy.user2 = Dummy.user
+        self.myTableView.deleteRows(at: [indexPath] , with: UITableViewRowAnimation.fade)
         
         //then rebuild the arrays
+        
         nameList.removeAll()
         dateList.removeAll()
         priceList.removeAll()
@@ -105,7 +112,11 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
             priceList.append((Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[String]?.price)!)
             dateList.append((Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[String]?.date)!)
         }
-        myTableView.reloadData()
+        DispatchQueue.main.async {
+            self.myTableView.reloadData()
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Deleted \(Dummy.user)")
+        }
     }
     
     //From the Table to the Next Page!

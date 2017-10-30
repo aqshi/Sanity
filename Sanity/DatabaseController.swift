@@ -26,10 +26,9 @@ class DatabaseController: NSObject {
     }
     
     func getBudgetObject(userID: String) {
-        print("Get Budget Object")
-
-        ref = Database.database().reference().child("Users").child(userID)
-        ref.observe(DataEventType.value, with: { (snapshot) in
+        DispatchQueue.global().async {
+            self.ref = Database.database().reference().child("Users").child(userID)
+            self.ref.observe(DataEventType.value, with: { (snapshot) in
             if let getData = snapshot.value as? [String:Any] {
 //                let _name = getData["Name"] as! String
 //                let _email = getData["Email"] as! String
@@ -66,6 +65,7 @@ class DatabaseController: NSObject {
 //                                        newBudget.nextDateResetString = nextDateReset
                                         Dummy.user.budgetList[bName] = newBudget
                                         print("Create \(newBudget)")
+                                        print(Dummy.user)
                                     }
                                 }
                             }
@@ -75,6 +75,7 @@ class DatabaseController: NSObject {
             }
 
         })
+        }
     }
     
     func getCategoryObject(userID: String) {
@@ -206,23 +207,24 @@ class DatabaseController: NSObject {
         print("End Purchase Object")
     }
     func getUserObject(userID: String){
-        print("Get User Object")
-        self.ref = Database.database().reference().child("Users").child(userID)
-        self.ref.observe(DataEventType.value, with: { (snapshot) in
-            if let getData = snapshot.value as? [String:Any] {
-                let _name = getData["Name"] as! String
-                let _email = getData["Email"] as! String
-                let budgetArray = [String : Budget]()
-                Dummy.user.email = _email
-                Dummy.user.name = _name
-                Dummy.user.userID = userID
-                Dummy.user.budgetList = budgetArray
-            }
-        })
-        getBudgetObject(userID: userID)
-        getCategoryObject(userID: userID)
-        getPurchaseObject(userID: userID)
-
+        DispatchQueue.global().async {
+            print("Get User Object")
+            self.ref = Database.database().reference().child("Users").child(userID)
+            self.ref.observe(DataEventType.value, with: { (snapshot) in
+                if let getData = snapshot.value as? [String:Any] {
+                    let _name = getData["Name"] as! String
+                    let _email = getData["Email"] as! String
+                    let budgetArray = [String : Budget]()
+                    Dummy.user.email = _email
+                    Dummy.user.name = _name
+                    Dummy.user.userID = userID
+                    Dummy.user.budgetList = budgetArray
+                }
+            })
+            self.getBudgetObject(userID: userID)
+            self.getCategoryObject(userID: userID)
+            self.getPurchaseObject(userID: userID)
+        }
     }
     
     func addBudget(newBudget: Budget) {
@@ -282,7 +284,7 @@ class DatabaseController: NSObject {
                     categoryData = ["name":categoryObject.name, "amountLimit":categoryObject.amountLimit, "amountUsed": categoryObject.amountUsed, "notificationPercent": categoryObject.notificationPercent] as [String : Any]
                     self.ref.child("Budgets").child(budgetName).child("categories").child(cName).setValue(categoryData)
                 }
-                print("Data \(user)")
+                
                 
                 for(categoryName, categoryObject) in (user.budgetList[budgetName]?.categoryList)! {
                     cName = categoryName
@@ -292,6 +294,7 @@ class DatabaseController: NSObject {
                         self.ref.child("Budgets").child(budgetName).child("categories").child(cName).child("purchases").child(pName).setValue(purchaseData)
                     }
                 }
+                print("Data \(user)")
             }
         }
     }

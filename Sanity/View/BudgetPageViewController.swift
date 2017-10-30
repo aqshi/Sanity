@@ -119,7 +119,11 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
             percentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)! / (Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)! )
         }
         myTableView.reloadData()
-        
+        Dummy.user2 = Dummy.user
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Deleted \(Dummy.user)")
+        }
     }
     
     //From the Table to the Next Page!

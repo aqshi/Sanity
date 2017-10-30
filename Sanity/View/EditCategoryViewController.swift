@@ -76,7 +76,11 @@ class EditCategoryViewController: UIViewController {
                     }
         
         globalCat = nametoStore
-        
+        Dummy.user2 = Dummy.user
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Updated \(Dummy.user)")
+        }
         
           //reloadCat
            let updater = NSNotification.Name("reloadCat")

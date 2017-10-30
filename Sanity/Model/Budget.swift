@@ -21,7 +21,6 @@ struct Budget{
                notificationFrequency: String,
                categoryList: [String : Category]) {
         
-        print("11111111111")
         //self.budgetID = budgetID
         self.name = name
         
@@ -74,7 +73,6 @@ struct Budget{
         nextFixedReset: String,
         nextDateReset: String,
         categoryList: [String : Category])  {
-        print("2222222222")
         self.name = name
         self.budgetAmount = budgetAmount
         self.budgetUsed = budgetUsed
@@ -102,8 +100,6 @@ struct Budget{
         self.nextIntervalReset = dateFormatter.date(from:self.nextIntervalResetString)!
         self.nextDateReset = dateFormatter.date(from:self.nextDateResetString)!
         self.nextFixedReset = dateFormatter.date(from:self.nextFixedResetString)!
-
-
     }
     
     

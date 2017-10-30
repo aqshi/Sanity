@@ -72,6 +72,7 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
                 Dummy.user.budgetList[budgetName]!.categoryList[customCell.name] = cat
             }
         }
+        Dummy.user2 = Dummy.user
         Dummy.delay = true
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
