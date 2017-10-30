@@ -78,6 +78,12 @@ class TransactionPageViewController: UIViewController {
         if nametoStore != globalPurchase {
                    Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList.removeValue(forKey: globalPurchase)
                   }
+        for(String, _) in (Dummy.user.budgetList){
+            for(String, _) in (Dummy.user.budgetList[String]?.categoryList)! {
+                Dummy.user.budgetList[globalBudget]?.categoryList[String]?.calcUsed()
+            }
+            Dummy.user.budgetList[String]?.update()
+        }
         Dummy.user2 = Dummy.user
         //reset the global Purchase
         globalPurchase = nametoStore
