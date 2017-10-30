@@ -80,6 +80,13 @@ class TransactionCreationViewController: UIViewController {
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
             print("Add purchase \(Dummy.user)")
+            let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
+            let RemainRatio = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) / Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
+
+            let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.recentIntervalResetString;
+            if(RemainRatio >= (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!){
+                User.purchaseOverLimitNotification(Budgetname: Dummy.currentBudgetName, Categoryname: Dummy.currentCategoryName, AmountLeft: RemainBalance, timeRemain: time!, Repeat: (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationFrequency)!)
+            }
         }
         //Next, Let's update the previous page! the Category creation Page!
         let updater = NSNotification.Name("reloadCat")
