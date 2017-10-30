@@ -201,9 +201,11 @@ struct Budget{
         //if the next date reset = Today!?
         if(self.nextDateResetString == currentDateString){
             //delete all of my purchases
+            
             for( String , _) in self.categoryList {
+                var currCatt = String
                 for(String2 , _) in (self.categoryList[String]?.purchaseList)!{
-                    self.categoryList[String]?.purchaseList.removeValue(forKey: String2)
+                    self.categoryList[currCatt]?.purchaseList.removeValue(forKey: String2)
                 }
             }
         }
