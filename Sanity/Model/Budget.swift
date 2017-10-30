@@ -208,6 +208,7 @@ struct Budget{
         calcUsed()
         calcTotal()
         
+        //WORKS
         //I deleted all of my Purchases. Now I have to move intervalReset forward
         if(self.resetInterval == "0"){
             var dateComponent = DateComponents()
