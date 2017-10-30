@@ -49,7 +49,7 @@ struct User {
             }
             else if(Repeat == "1"){
                 print("11111111111111111")
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval:10, repeats:false)
                 let request = UNNotificationRequest(identifier:"noti", content:content, trigger:trigger)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             }

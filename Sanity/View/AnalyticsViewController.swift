@@ -81,33 +81,25 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
     @IBAction func confirmPressed(_ sender: Any) {
         
         if(self.BudgetTF.text == ""){
-            
             BudgetTF.placeholder = "Cannot be empty"
-            
         }
-            
         else if(self.CategoryTF.text == ""){
-            
-            CategoryTF.placeholder = "Cannot be empty"
-            
-        }
-            
-        else{
-            
-            let tempx = Dummy.user.budgetList[selectedBudget]?.categoryList[selectedCat]?.purchaseList
-            
-            for(_,y) in tempx!{
-                
-                numbers.append(y.price!)
-                
-                print(y)
-                
+            numbers.removeAll()
+            let tempy = Dummy.user.budgetList[selectedBudget]?.categoryList
+            for(_,yy) in tempy! {
+                numbers.append(Double(yy.amountUsed)/Double(yy.amountLimit))
             }
-            
             updateGraph()
-            
         }
-        
+        else{
+            let tempx = Dummy.user.budgetList[selectedBudget]?.categoryList[selectedCat]?.purchaseList
+            numbers.removeAll()
+            for(_,y) in tempx!{
+                numbers.append(y.price!)
+                print(y)
+            }
+            updateGraph()
+        }
     }
     
     
