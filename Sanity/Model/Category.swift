@@ -22,7 +22,7 @@ struct Category {
         //var categoryID = ""
         self.name = name
         self.amountLimit = amountLimit
-        self.amountUsed = 0
+        self.amountUsed = amountUsed
         self.notificationPercent = notificationPercent
         self.purchaseList = purchaseList
     }

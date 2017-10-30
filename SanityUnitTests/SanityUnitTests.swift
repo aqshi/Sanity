@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Sanity
+@testable import Sanity
 
 class SanityUnitTests: XCTestCase {
     
