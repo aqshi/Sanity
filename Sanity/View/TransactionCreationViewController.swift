@@ -75,6 +75,12 @@ class TransactionCreationViewController: UIViewController {
         print(desc)
         let purchase = Purchase(name: name , price: amnt ,date: selectedDate, memo: desc)
         Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList[name] = purchase
+        for(String, _) in (Dummy.user.budgetList){
+            for(String, _) in (Dummy.user.budgetList[String]?.categoryList)! {
+                Dummy.user.budgetList[globalBudget]?.categoryList[String]?.calcUsed()
+            }
+            Dummy.user.budgetList[String]?.update()
+        }
         Dummy.user2 = Dummy.user
         //User.purchaseOverLimitNotification()
         DispatchQueue.main.async {
