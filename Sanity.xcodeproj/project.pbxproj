@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4919F19D1FA71AD000F979DB /* SanityUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919F19C1FA71AD000F979DB /* SanityUITest.swift */; };
+		1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */; };
+		6AE127167301CE649CB39562 /* Pods_SanityUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */; };
 		9653A2D0E9B2D24592723259 /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */; };
 		D742598B1F9547DF0073366D /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D742598A1F9547DF0073366D /* Dummy.swift */; };
 		D76CD5FF1F914AEA00305C88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D76CD5FE1F914AEA00305C88 /* GoogleService-Info.plist */; };
@@ -27,6 +30,7 @@
 		D7C471C11F904BC100BCBD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7C471C01F904BC100BCBD8B /* Assets.xcassets */; };
 		D7C471C41F904BC100BCBD8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C471C21F904BC100BCBD8B /* LaunchScreen.storyboard */; };
 		D7D352FB1F91B85E009094D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D352FA1F91B85E009094D3 /* User.swift */; };
+		D7D855AA1FA6F1E0009CFE5A /* SanityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D855A91FA6F1E0009CFE5A /* SanityUnitTests.swift */; };
 		D7FD0CC81F91A0D8002BDA41 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0CC71F91A0D8002BDA41 /* MainSceneViewController.swift */; };
 		D7FD0CCC1F91A9CE002BDA41 /* initialTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0CCB1F91A9CE002BDA41 /* initialTabBarViewController.swift */; };
 		D7FD0CCE1F91ADBD002BDA41 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD0CCD1F91ADBD002BDA41 /* Purchase.swift */; };
@@ -46,8 +50,23 @@
 		F32F26091F94574D00C0387C /* TransCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32F26071F94574D00C0387C /* TransCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D7D855AC1FA6F1E0009CFE5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C471AE1F904BC100BCBD8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7C471B51F904BC100BCBD8B;
+			remoteInfo = Sanity;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInitTest.swift; sourceTree = "<group>"; };
 		1D8B86DE52D30AFED5394C24 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
+		4919F19A1FA719FD00F979DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4919F19B1FA719FD00F979DB /* SanityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUITests.swift; sourceTree = "<group>"; };
+		4919F19C1FA71AD000F979DB /* SanityUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUITest.swift; sourceTree = "<group>"; };
+		AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SanityUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sanity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D742598A1F9547DF0073366D /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		D76CD5FE1F914AEA00305C88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -70,11 +89,15 @@
 		D7C471C31F904BC100BCBD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7C471C51F904BC100BCBD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7D352FA1F91B85E009094D3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D7D855A71FA6F1E0009CFE5A /* SanityUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanityUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D855A91FA6F1E0009CFE5A /* SanityUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUnitTests.swift; sourceTree = "<group>"; };
+		D7D855AB1FA6F1E0009CFE5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7FD0CC71F91A0D8002BDA41 /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		D7FD0CCB1F91A9CE002BDA41 /* initialTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialTabBarViewController.swift; sourceTree = "<group>"; };
 		D7FD0CCD1F91ADBD002BDA41 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		D7FD0CD01F91B014002BDA41 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D7FD0CD21F91B096002BDA41 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		E0845E0BE79F7234EB1AA805 /* Pods-SanityUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanityUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanityUnitTests/Pods-SanityUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F32F25F21F9323DB00C0387C /* pickerCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerCell1.swift; sourceTree = "<group>"; };
 		F32F25F31F9323DB00C0387C /* pickerCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = pickerCell1.xib; sourceTree = "<group>"; };
 		F32F25F61F93303300C0387C /* pickerCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerCell2.swift; sourceTree = "<group>"; };
@@ -88,6 +111,7 @@
 		F32F26061F94574D00C0387C /* TransCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransCell.swift; sourceTree = "<group>"; };
 		F32F26071F94574D00C0387C /* TransCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransCell.xib; sourceTree = "<group>"; };
 		FAA91C530B9BF1FD8199F67A /* Pods-Sanity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.release.xcconfig"; sourceTree = "<group>"; };
+		FB12476EC4C67A5CF999F083 /* Pods-SanityUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanityUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanityUnitTests/Pods-SanityUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +123,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D855A41FA6F1E0009CFE5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AE127167301CE649CB39562 /* Pods_SanityUnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -106,8 +138,19 @@
 			isa = PBXGroup;
 			children = (
 				C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */,
+				AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4919F1991FA719FD00F979DB /* SanityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4919F19A1FA719FD00F979DB /* Info.plist */,
+				4919F19B1FA719FD00F979DB /* SanityUITests.swift */,
+				4919F19C1FA71AD000F979DB /* SanityUITest.swift */,
+			);
+			path = SanityUITests;
 			sourceTree = "<group>";
 		};
 		D5E7A67734980B617E24A116 /* Pods */ = {
@@ -115,6 +158,8 @@
 			children = (
 				1D8B86DE52D30AFED5394C24 /* Pods-Sanity.debug.xcconfig */,
 				FAA91C530B9BF1FD8199F67A /* Pods-Sanity.release.xcconfig */,
+				E0845E0BE79F7234EB1AA805 /* Pods-SanityUnitTests.debug.xcconfig */,
+				FB12476EC4C67A5CF999F083 /* Pods-SanityUnitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -154,7 +199,9 @@
 		D7C471AD1F904BC100BCBD8B = {
 			isa = PBXGroup;
 			children = (
+				4919F1991FA719FD00F979DB /* SanityUITests */,
 				D7C471B81F904BC100BCBD8B /* Sanity */,
+				D7D855A81FA6F1E0009CFE5A /* SanityUnitTests */,
 				D7C471B71F904BC100BCBD8B /* Products */,
 				D5E7A67734980B617E24A116 /* Pods */,
 				147561A1EB65C011148ACE9F /* Frameworks */,
@@ -165,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				D7C471B61F904BC100BCBD8B /* Sanity.app */,
+				D7D855A71FA6F1E0009CFE5A /* SanityUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +231,16 @@
 				D76CD5FE1F914AEA00305C88 /* GoogleService-Info.plist */,
 			);
 			path = Sanity;
+			sourceTree = "<group>";
+		};
+		D7D855A81FA6F1E0009CFE5A /* SanityUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855A91FA6F1E0009CFE5A /* SanityUnitTests.swift */,
+				1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */,
+				D7D855AB1FA6F1E0009CFE5A /* Info.plist */,
+			);
+			path = SanityUnitTests;
 			sourceTree = "<group>";
 		};
 		D7FD0CCF1F91AFF5002BDA41 /* Model */ = {
@@ -220,6 +278,27 @@
 			productReference = D7C471B61F904BC100BCBD8B /* Sanity.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D7D855A61FA6F1E0009CFE5A /* SanityUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D855B01FA6F1E0009CFE5A /* Build configuration list for PBXNativeTarget "SanityUnitTests" */;
+			buildPhases = (
+				0C8DE04DC9154AEAE7638454 /* [CP] Check Pods Manifest.lock */,
+				D7D855A31FA6F1E0009CFE5A /* Sources */,
+				D7D855A41FA6F1E0009CFE5A /* Frameworks */,
+				D7D855A51FA6F1E0009CFE5A /* Resources */,
+				CEC83A562302BB70518BC604 /* [CP] Embed Pods Frameworks */,
+				E3648E5BFD783DCCB5520CE4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7D855AD1FA6F1E0009CFE5A /* PBXTargetDependency */,
+			);
+			name = SanityUnitTests;
+			productName = SanityUnitTests;
+			productReference = D7D855A71FA6F1E0009CFE5A /* SanityUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -233,6 +312,11 @@
 					D7C471B51F904BC100BCBD8B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+					};
+					D7D855A61FA6F1E0009CFE5A = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7C471B51F904BC100BCBD8B;
 					};
 				};
 			};
@@ -250,6 +334,7 @@
 			projectRoot = "";
 			targets = (
 				D7C471B51F904BC100BCBD8B /* Sanity */,
+				D7D855A61FA6F1E0009CFE5A /* SanityUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,9 +357,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D855A51FA6F1E0009CFE5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C8DE04DC9154AEAE7638454 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SanityUnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		94B89882C6D5D84C5C2274B1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,7 +413,7 @@
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-f0850809/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -337,6 +447,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEC83A562302BB70518BC604 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SanityUnitTests/Pods-SanityUnitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SanityUnitTests/Pods-SanityUnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3648E5BFD783DCCB5520CE4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SanityUnitTests/Pods-SanityUnitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -375,7 +520,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D855A31FA6F1E0009CFE5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */,
+				D7D855AA1FA6F1E0009CFE5A /* SanityUnitTests.swift in Sources */,
+				4919F19D1FA71AD000F979DB /* SanityUITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7D855AD1FA6F1E0009CFE5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7C471B51F904BC100BCBD8B /* Sanity */;
+			targetProxy = D7D855AC1FA6F1E0009CFE5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D7C471BD1F904BC100BCBD8B /* Main.storyboard */ = {
@@ -538,6 +701,40 @@
 			};
 			name = Release;
 		};
+		D7D855AE1FA6F1E0009CFE5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0845E0BE79F7234EB1AA805 /* Pods-SanityUnitTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCPMP5SHHU;
+				INFOPLIST_FILE = SanityUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinwaiwong.SanityUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sanity.app/Sanity";
+			};
+			name = Debug;
+		};
+		D7D855AF1FA6F1E0009CFE5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB12476EC4C67A5CF999F083 /* Pods-SanityUnitTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XCPMP5SHHU;
+				INFOPLIST_FILE = SanityUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinwaiwong.SanityUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sanity.app/Sanity";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -555,6 +752,15 @@
 			buildConfigurations = (
 				D7C471C91F904BC100BCBD8B /* Debug */,
 				D7C471CA1F904BC100BCBD8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D855B01FA6F1E0009CFE5A /* Build configuration list for PBXNativeTarget "SanityUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D855AE1FA6F1E0009CFE5A /* Debug */,
+				D7D855AF1FA6F1E0009CFE5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
