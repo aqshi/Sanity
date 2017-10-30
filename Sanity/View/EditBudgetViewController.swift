@@ -163,7 +163,31 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
         //the NFFrequency
         Dummy.user.budgetList[globalBudget]?.notificationFrequency = String(NFSegment.selectedSegmentIndex)
         
+        
+        
+        if (Dummy.user.budgetList[globalBudget]?.update() == 1){
+            for( String1 , _ ) in (Dummy.user.budgetList[globalBudget]?.categoryList)!{
+                for( String , _ ) in (Dummy.user.budgetList[globalBudget]?.categoryList[String1]?.purchaseList)! {
+Dummy.user.budgetList[globalBudget]?.categoryList[String1]?.purchaseList.removeValue(forKey: String)
+                }
+                Dummy.user.budgetList[globalBudget]?.categoryList[String1]?.calcUsed()
+            }
+        }
+        
         Dummy.user.budgetList[globalBudget]?.update()
+        
+        //Update the previous page, the Budget Page
+        let updater = NSNotification.Name("reloadBud")
+        NotificationCenter.default.post(name: updater, object: nil)
+        
+        Dummy.user2 = Dummy.user
+        DispatchQueue.main.async {
+            Dummy.dc.pushUserToFirebase(user: Dummy.user)
+            print("Updated \(Dummy.user)")
+        }
+        
+        
+        
         
     }
     
