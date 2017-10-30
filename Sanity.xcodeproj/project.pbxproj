@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */; };
 		6AE127167301CE649CB39562 /* Pods_SanityUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */; };
 		9653A2D0E9B2D24592723259 /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */; };
 		D742598B1F9547DF0073366D /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D742598A1F9547DF0073366D /* Dummy.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInitTest.swift; sourceTree = "<group>"; };
 		1D8B86DE52D30AFED5394C24 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
 		AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SanityUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sanity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D855A91FA6F1E0009CFE5A /* SanityUnitTests.swift */,
+				1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */,
 				D7D855AB1FA6F1E0009CFE5A /* Info.plist */,
 			);
 			path = SanityUnitTests;
@@ -506,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */,
 				D7D855AA1FA6F1E0009CFE5A /* SanityUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
