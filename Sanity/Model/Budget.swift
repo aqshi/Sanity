@@ -314,7 +314,12 @@ struct Budget{
             components.day = Int(actingARD)!
             self.nextFixedReset = gregorian.date(from: components)!
             //if we past the date, push us forward!
-            if(self.nextFixedReset < now){
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            let newNowDate = dateFormatter.string(from: now)
+            let newNextDate = dateFormatter.string(from: self.nextFixedReset)
+            
+            if(newNextDate < newNowDate){
                 var dateComponent = DateComponents()
                 dateComponent.month = 1
                 let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextFixedReset)
