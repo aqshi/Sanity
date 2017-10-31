@@ -12,7 +12,8 @@ class TransactionPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        myDate.datePickerMode = UIDatePickerMode.date
+
         //First we need to populate with stuff already there
     }
     
