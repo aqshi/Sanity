@@ -13,7 +13,6 @@ class TransactionPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        amountField.text = "$0.00"
         //First we need to populate with stuff already there
     }
     
@@ -21,6 +20,7 @@ class TransactionPageViewController: UIViewController {
         nameField.text = Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.name
         memoField.text = Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.memo
         amountField.text = String(format:"%.2f",(Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.price)!)
+        doubletoStore = (Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.price)!
     }
 
     override func didReceiveMemoryWarning() {
