@@ -1,8 +1,8 @@
 //
 //  ClassInitTest.swift
-//  SanityUnitTests
+//  UnitTests
 //
-//  Created by MaximilianZeng on 10/29/17.
+//  Created by Austin Shi on 10/30/17.
 //  Copyright © 2017 Leftover System. All rights reserved.
 //
 

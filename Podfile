@@ -15,5 +15,9 @@ target 'Sanity' do
       inherit! :search_paths
       pod 'Firebase'
   end
+  target 'UnitTests' do
+      inherit! :search_paths
+      pod 'Firebase'
+  end
 end
 
