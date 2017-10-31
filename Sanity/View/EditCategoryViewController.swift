@@ -13,8 +13,7 @@ class EditCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        amnt.text = "$0.00"
-        doubletoStore = 0
+        
         // Do any additional setup after loading the view.
     }
     
@@ -24,6 +23,7 @@ class EditCategoryViewController: UIViewController {
         
         name.text = originalName
         amnt.text = String(format:"%.2f", originalDouble)
+        doubletoStore = originalDouble
     }
 
     override func didReceiveMemoryWarning() {

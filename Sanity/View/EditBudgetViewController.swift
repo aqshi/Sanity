@@ -33,6 +33,9 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var intervalChooser: UISegmentedControl!
