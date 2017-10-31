@@ -227,33 +227,33 @@ class DatabaseController: NSObject {
         }
     }
     
-    func addBudget(newBudget: Budget) {
-        Dummy.user.budgetList[newBudget.name] = newBudget
-    }
-    func addCategory(budgetName: String, newCategory: Category) {
-        Dummy.user.budgetList[budgetName]?.categoryList[newCategory.name] = newCategory
-    }
-    func addPurchase(budgetName: String, categoryName: String, newPurchase: Purchase) {
-        Dummy.user.budgetList[budgetName]?.categoryList[categoryName]?.purchaseList[newPurchase.name!] = newPurchase
-    }
-    func updateBudget(newBudget: Budget) {
-        Dummy.user.budgetList[newBudget.name] = newBudget
-    }
-    func updateCategory(budgetName: String, newCategory: Category) {
-        Dummy.user.budgetList[budgetName]?.categoryList[newCategory.name] = newCategory
-    }
-    func updatePurchase(budgetName: String, categoryName: String, newPurchase: Purchase) {
-        Dummy.user.budgetList[budgetName]?.categoryList[categoryName]?.purchaseList[newPurchase.name!] = newPurchase
-    }
-    func removeBudget(newBudget: Budget) {
-        Dummy.user.budgetList.removeValue(forKey: newBudget.name)
-    }
-    func removeCategory(budgetName: String, newCategory: Category) {
-        Dummy.user.budgetList[budgetName]?.categoryList.removeValue(forKey: newCategory.name)
-    }
-    func removePurchase(budgetName: String, categoryName: String, newPurchase: Purchase) {
-        Dummy.user.budgetList[budgetName]?.categoryList[categoryName]?.purchaseList.removeValue(forKey: newPurchase.name!)
-    }
+//    func addBudget(newBudget: Budget) {
+//        Dummy.user.budgetList[newBudget.name] = newBudget
+//    }
+//    func addCategory(budgetName: String, newCategory: Category) {
+//        Dummy.user.budgetList[budgetName]?.categoryList[newCategory.name] = newCategory
+//    }
+//    func addPurchase(budgetName: String, categoryName: String, newPurchase: Purchase) {
+//        Dummy.user.budgetList[budgetName]?.categoryList[categoryName]?.purchaseList[newPurchase.name!] = newPurchase
+//    }
+//    func updateBudget(newBudget: Budget) {
+//        Dummy.user.budgetList[newBudget.name] = newBudget
+//    }
+//    func updateCategory(budgetName: String, newCategory: Category) {
+//        Dummy.user.budgetList[budgetName]?.categoryList[newCategory.name] = newCategory
+//    }
+//    func updatePurchase(budgetName: String, categoryName: String, newPurchase: Purchase) {
+//        Dummy.user.budgetList[budgetName]?.categoryList[categoryName]?.purchaseList[newPurchase.name!] = newPurchase
+//    }
+//    func removeBudget(newBudget: Budget) {
+//        Dummy.user.budgetList.removeValue(forKey: newBudget.name)
+//    }
+//    func removeCategory(budgetName: String, newCategory: Category) {
+//        Dummy.user.budgetList[budgetName]?.categoryList.removeValue(forKey: newCategory.name)
+//    }
+//    func removePurchase(budgetName: String, categoryName: String, newPurchase: Purchase) {
+//        Dummy.user.budgetList[budgetName]?.categoryList[categoryName]?.purchaseList.removeValue(forKey: newPurchase.name!)
+//    }
     func pushUserToFirebase(user: User){
         DispatchQueue.global().async {
             print("Push")

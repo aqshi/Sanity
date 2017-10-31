@@ -2,7 +2,7 @@
 //  SanityUITests.swift
 //  SanityUITests
 //
-//  Created by Austin Shi on 10/28/17.
+//  Created by MaximilianZeng on 10/30/17.
 //  Copyright © 2017 Leftover System. All rights reserved.
 //
 
@@ -28,76 +28,70 @@ class SanityUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample2() {
+    func testBudgetCreation(){
         
         let app = XCUIApplication()
         app.buttons["New Budget"].tap()
-        
-        let textField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
+        let textField = element.children(matching: .textField).element
         textField.tap()
-        textField.typeText("Budget1")
-        app.buttons["Continue"].tap()
-        app.buttons["Cancel"].tap()
-        
-        //XCTAssert(app.tables.cells.containing(.staticText, identifier:"Budget1").staticTexts["01 Jan 9999"].exists)
-        
-        
-        
+        textField.typeText("Trojan Budget")
+        //element.children(matching: .picker).element.pickerWheels["Don't"].tap()
+        //app.tables.cells.containing(.staticText, identifier:"Reset Every:")/*@START_MENU_TOKEN@*/.pickerWheels["Don't"]/*[[".pickers.pickerWheels[\"Don't\"]",".pickerWheels[\"Don't\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        print("Break1")
+        if app.buttons["Continue"].isHittable {
+            app.buttons["Continue"].tap()
+            if app.buttons["Cancel"].isHittable {
+                app.buttons["Cancel"].tap()
+            }
+            else {
+                let coordinate: XCUICoordinate = app.buttons["Cancel"].coordinate(withNormalizedOffset: CGVector(dx:0.0, dy:0.0))
+                coordinate.tap()
+            }
+        }
+        else {
+            let coordinate: XCUICoordinate = app.buttons["Continue"].coordinate(withNormalizedOffset: CGVector(dx:0.0, dy:0.0))
+            coordinate.tap()
+            if app.buttons["Cancel"].isHittable {
+                app.buttons["Cancel"].tap()
+            }
+            else {
+                let coordinate: XCUICoordinate = app.buttons["Cancel"].coordinate(withNormalizedOffset: CGVector(dx:0.0, dy:0.0))
+                coordinate.tap()
+            }
+        }
+        print("Break2")
+//        if app.buttons["Cancel"].isHittable {
+//               app.buttons["Cancel"].tap()
+//        }
+//        else {
+//            let coordinate: XCUICoordinate = app.buttons["Cancel"].coordinate(withNormalizedOffset: CGVector(dx:0.0, dy:0.0))
+//            coordinate.tap()
+//        }
+        print("Break3")
+        //XCTAssertEqual(app.tableRows.count, 1)
+        XCTAssert(app.staticTexts["Trojan Budget"].exists)
+        //XCTAssert(app.tables.staticTexts["Trojan Budget"].exists)
     }
     
-    
-    func testExample3() {//Test for Succesful Created Budget
+    func testBudgetCreationCancel() {
         
         let app = XCUIApplication()
         app.buttons["New Budget"].tap()
         
         let textField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
         textField.tap()
-        textField.typeText("Budget1")
-        XCTAssert(app.textFields["Budget1"].exists)
+        textField.typeText("Trojan Budget")
+        if app.buttons["Cancel"].isHittable {
+            app.buttons["Cancel"].tap()
+        }
+        else {
+            let coordinate: XCUICoordinate = app.buttons["Cancel"].coordinate(withNormalizedOffset: CGVector(dx:0.0, dy:0.0))
+            coordinate.tap()
+        }
+        
+        XCTAssertEqual(app.tableRows.count, 0 )
+        //XCTAssertEqual(app.tables.otherElements["MESSAGES"].exists)
+    }
 
-    }
-    func testExample4() {//Test for Succesful Created Category
-        
-        let app = XCUIApplication()
-        app.tables.cells.containing(.staticText, identifier:"Budget1").staticTexts["Total Spent:"].tap()
-        app.buttons["Add Category"].tap()
-        
-        let element2 = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1)
-        let element = element2.children(matching: .other).element
-        let textField = element.children(matching: .textField).element(boundBy: 0)
-        textField.tap()
-        textField.typeText("Food")
-        
-        let textField2 = element.children(matching: .textField).element(boundBy: 1)
-        textField2.tap()
-        textField2.tap()
-        textField2.typeText("100")
-        element2.tap()
-        app.buttons["Confirm"].tap()
-        XCTAssert(app.tables.staticTexts["Food"].exists)
-        
-    }
-    func testExample5() {//Test for proper budget limit
-        
-        let app = XCUIApplication()
-        app.tables.cells.containing(.staticText, identifier:"Budget1").staticTexts["Total Spent:"].tap()
-        app.buttons["Add Category"].tap()
-        
-        let element2 = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1)
-        let element = element2.children(matching: .other).element
-        let textField = element.children(matching: .textField).element(boundBy: 0)
-        textField.tap()
-        textField.typeText("Food")
-        
-        let textField2 = element.children(matching: .textField).element(boundBy: 1)
-        textField2.tap()
-        textField2.tap()
-        textField2.typeText("100")
-        element2.tap()
-        app.buttons["Confirm"].tap()
-        XCTAssert(app.tables.staticTexts["100.00"].exists)
-        
-    }
-    
 }
