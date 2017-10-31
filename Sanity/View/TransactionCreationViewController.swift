@@ -18,6 +18,9 @@ class TransactionCreationViewController: UIViewController {
         self.TransactionAmountTextField.delegate = self as? UITextFieldDelegate
         self.TransactionDescriptionTextField.delegate = self as? UITextFieldDelegate
         recordDate(self)
+        
+        TransactionAmountTextField.text = "$0.00"
+        
         // Do any additional setup after loading the view.
     }
 
@@ -43,8 +46,17 @@ class TransactionCreationViewController: UIViewController {
         let amountDisplay = Double(TransactionAmountTextField.text!)
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        TransactionAmountTextField.text = formatter.string(from: NSNumber(value:amountDisplay!))
-        doubletoStore = amountDisplay!
+        
+        let ADString = TransactionAmountTextField.text!
+        let ADParts = ADString.components(separatedBy: ".")
+        if (ADParts.count <= 2 && ADString.range(of: "..") == nil) {
+            TransactionAmountTextField.text = formatter.string(from: NSNumber(value:amountDisplay!))
+            doubletoStore = amountDisplay!
+        }
+        else {
+            TransactionAmountTextField.text = "Invalid Number"
+            doubletoStore = 0
+        }
     }
     
     //datePicker//datePicker//datePicker//datePicker//datePicker//datePicker
@@ -65,6 +77,9 @@ class TransactionCreationViewController: UIViewController {
     var name : String = ""
     var amnt : Double = 0
     var desc : String = ""
+    
+    
+    
     @IBAction func confirmAddTransaction(_ sender: Any) {
         name = transactionNameTextField.text!
         amnt = doubletoStore

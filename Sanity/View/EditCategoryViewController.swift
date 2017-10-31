@@ -13,6 +13,8 @@ class EditCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        amnt.text = "$0.00"
+        doubletoStore = 0
         // Do any additional setup after loading the view.
     }
     
@@ -45,8 +47,17 @@ class EditCategoryViewController: UIViewController {
         let amountDisplay = Double(amnt.text!)
          let formatter = NumberFormatter()
                formatter.numberStyle = .currency
-              amnt.text = formatter.string(from: NSNumber(value:amountDisplay!))
-          doubletoStore = amountDisplay!
+        
+        let ADString = amnt.text!
+        let ADParts = ADString.components(separatedBy: ".")
+        if (ADParts.count <= 2 && ADString.range(of: "..") == nil) {
+            amnt.text = formatter.string(from: NSNumber(value:amountDisplay!))
+            doubletoStore = amountDisplay!
+        }
+        else {
+            amnt.text = "Invalid Number"
+            doubletoStore = 0
+        }
     }
     
     
