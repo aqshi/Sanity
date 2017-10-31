@@ -77,7 +77,11 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
                     resetdatesList.append("Never")
                 }
             }
-            self.myTableView.reloadData()
+            print("TEST1")
+            print(Dummy.user)
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+            }
         }
     }
     

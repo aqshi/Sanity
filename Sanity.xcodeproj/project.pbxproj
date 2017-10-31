@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */; };
+		1D19EBD31FA7264E00D5D662 /* SanityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19EBD21FA7264E00D5D662 /* SanityUITests.swift */; };
 		6AE127167301CE649CB39562 /* Pods_SanityUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */; };
 		9653A2D0E9B2D24592723259 /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */; };
 		D742598B1F9547DF0073366D /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D742598A1F9547DF0073366D /* Dummy.swift */; };
@@ -50,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1D19EBD51FA7264E00D5D662 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C471AE1F904BC100BCBD8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7C471B51F904BC100BCBD8B;
+			remoteInfo = Sanity;
+		};
 		D7D855AC1FA6F1E0009CFE5A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7C471AE1F904BC100BCBD8B /* Project object */;
@@ -61,6 +69,9 @@
 
 /* Begin PBXFileReference section */
 		1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInitTest.swift; sourceTree = "<group>"; };
+		1D19EBD01FA7264E00D5D662 /* SanityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D19EBD21FA7264E00D5D662 /* SanityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUITests.swift; sourceTree = "<group>"; };
+		1D19EBD41FA7264E00D5D662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D8B86DE52D30AFED5394C24 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
 		AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SanityUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sanity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +122,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D19EBCD1FA7264E00D5D662 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7C471B31F904BC100BCBD8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +155,15 @@
 				AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D19EBD11FA7264E00D5D662 /* SanityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1D19EBD21FA7264E00D5D662 /* SanityUITests.swift */,
+				1D19EBD41FA7264E00D5D662 /* Info.plist */,
+			);
+			path = SanityUITests;
 			sourceTree = "<group>";
 		};
 		D5E7A67734980B617E24A116 /* Pods */ = {
@@ -187,6 +214,7 @@
 			children = (
 				D7C471B81F904BC100BCBD8B /* Sanity */,
 				D7D855A81FA6F1E0009CFE5A /* SanityUnitTests */,
+				1D19EBD11FA7264E00D5D662 /* SanityUITests */,
 				D7C471B71F904BC100BCBD8B /* Products */,
 				D5E7A67734980B617E24A116 /* Pods */,
 				147561A1EB65C011148ACE9F /* Frameworks */,
@@ -198,6 +226,7 @@
 			children = (
 				D7C471B61F904BC100BCBD8B /* Sanity.app */,
 				D7D855A71FA6F1E0009CFE5A /* SanityUnitTests.xctest */,
+				1D19EBD01FA7264E00D5D662 /* SanityUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +272,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1D19EBCF1FA7264E00D5D662 /* SanityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D19EBD71FA7264E00D5D662 /* Build configuration list for PBXNativeTarget "SanityUITests" */;
+			buildPhases = (
+				1D19EBCC1FA7264E00D5D662 /* Sources */,
+				1D19EBCD1FA7264E00D5D662 /* Frameworks */,
+				1D19EBCE1FA7264E00D5D662 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D19EBD61FA7264E00D5D662 /* PBXTargetDependency */,
+			);
+			name = SanityUITests;
+			productName = SanityUITests;
+			productReference = 1D19EBD01FA7264E00D5D662 /* SanityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D7C471B51F904BC100BCBD8B /* Sanity */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7C471C81F904BC100BCBD8B /* Build configuration list for PBXNativeTarget "Sanity" */;
@@ -294,6 +341,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Leftover System";
 				TargetAttributes = {
+					1D19EBCF1FA7264E00D5D662 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7C471B51F904BC100BCBD8B;
+					};
 					D7C471B51F904BC100BCBD8B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -320,11 +372,19 @@
 			targets = (
 				D7C471B51F904BC100BCBD8B /* Sanity */,
 				D7D855A61FA6F1E0009CFE5A /* SanityUnitTests */,
+				1D19EBCF1FA7264E00D5D662 /* SanityUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D19EBCE1FA7264E00D5D662 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7C471B41F904BC100BCBD8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +532,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D19EBCC1FA7264E00D5D662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D19EBD31FA7264E00D5D662 /* SanityUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7C471B21F904BC100BCBD8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +585,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1D19EBD61FA7264E00D5D662 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7C471B51F904BC100BCBD8B /* Sanity */;
+			targetProxy = 1D19EBD51FA7264E00D5D662 /* PBXContainerItemProxy */;
+		};
 		D7D855AD1FA6F1E0009CFE5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D7C471B51F904BC100BCBD8B /* Sanity */;
@@ -544,6 +617,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D19EBD81FA7264E00D5D662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SanityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheLeftoverSystems.SanityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sanity;
+			};
+			name = Debug;
+		};
+		1D19EBD91FA7264E00D5D662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SanityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheLeftoverSystems.SanityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sanity;
+			};
+			name = Release;
+		};
 		D7C471C61F904BC100BCBD8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -722,6 +823,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D19EBD71FA7264E00D5D662 /* Build configuration list for PBXNativeTarget "SanityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D19EBD81FA7264E00D5D662 /* Debug */,
+				1D19EBD91FA7264E00D5D662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D7C471B11F904BC100BCBD8B /* Build configuration list for PBXProject "Sanity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
