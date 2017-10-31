@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4919F19D1FA71AD000F979DB /* SanityUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919F19C1FA71AD000F979DB /* SanityUITest.swift */; };
 		1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19EBCA1FA6FB6400D5D662 /* ClassInitTest.swift */; };
 		1D19EBD31FA7264E00D5D662 /* SanityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19EBD21FA7264E00D5D662 /* SanityUITests.swift */; };
 		6AE127167301CE649CB39562 /* Pods_SanityUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */; };
@@ -73,6 +74,9 @@
 		1D19EBD21FA7264E00D5D662 /* SanityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUITests.swift; sourceTree = "<group>"; };
 		1D19EBD41FA7264E00D5D662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D8B86DE52D30AFED5394C24 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
+		4919F19A1FA719FD00F979DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4919F19B1FA719FD00F979DB /* SanityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUITests.swift; sourceTree = "<group>"; };
+		4919F19C1FA71AD000F979DB /* SanityUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityUITest.swift; sourceTree = "<group>"; };
 		AB2981C4963D207360B98800 /* Pods_SanityUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SanityUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12EF4CA60D7738E7F7D5FEE /* Pods_Sanity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sanity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D742598A1F9547DF0073366D /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		D7C471AD1F904BC100BCBD8B = {
 			isa = PBXGroup;
 			children = (
+				4919F1991FA719FD00F979DB /* SanityUITests */,
 				D7C471B81F904BC100BCBD8B /* Sanity */,
 				D7D855A81FA6F1E0009CFE5A /* SanityUnitTests */,
 				1D19EBD11FA7264E00D5D662 /* SanityUITests */,
@@ -579,6 +584,7 @@
 			files = (
 				1D19EBCB1FA6FB6400D5D662 /* ClassInitTest.swift in Sources */,
 				D7D855AA1FA6F1E0009CFE5A /* SanityUnitTests.swift in Sources */,
+				4919F19D1FA71AD000F979DB /* SanityUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

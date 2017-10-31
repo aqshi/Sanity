@@ -169,6 +169,7 @@ struct Budget{
         let currentDateString = formatter.string(from: currentDate)
         if(self.nextDateResetString == currentDateString){
         calculateReset()
+            return 1
         }
         return 0
     }
@@ -197,13 +198,17 @@ struct Budget{
         //if the next date reset = Today!?
         if(self.nextDateResetString == currentDateString){
             //delete all of my purchases
-            for( String , _) in self.categoryList {
-                for(String2 , _) in (self.categoryList[String]?.purchaseList)!{
-                    self.categoryList[String]?.purchaseList.removeValue(forKey: String2)
-                }
+            for( String , _ ) in self.categoryList {
+                self.categoryList[String]!.clearPurchases()
+                self.categoryList[String]!.calcUsed()
             }
         }
         
+        //update my values
+        calcUsed()
+        calcTotal()
+        
+        //WORKS
         //I deleted all of my Purchases. Now I have to move intervalReset forward
         if(self.resetInterval == "0"){
             var dateComponent = DateComponents()
@@ -252,7 +257,7 @@ struct Budget{
         self.nextIntervalResetString = formatter.string(from: nextIntervalReset)
         self.nextFixedResetString = formatter.string(from: nextFixedReset)
         
-        update()
+        
     }
     
     
@@ -310,7 +315,12 @@ struct Budget{
             components.day = Int(actingARD)!
             self.nextFixedReset = gregorian.date(from: components)!
             //if we past the date, push us forward!
-            if(self.nextFixedReset < now){
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            let newNowDate = dateFormatter.string(from: now)
+            let newNextDate = dateFormatter.string(from: self.nextFixedReset)
+            
+            if(newNextDate < newNowDate){
                 var dateComponent = DateComponents()
                 dateComponent.month = 1
                 let futureDate = Calendar.current.date(byAdding: dateComponent, to: self.nextFixedReset)

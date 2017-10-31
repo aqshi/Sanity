@@ -27,14 +27,11 @@ class SanityUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    
     
     func testBudgetCreation(){
         
         let app = XCUIApplication()
         app.buttons["New Budget"].tap()
-        
         let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
         let textField = element.children(matching: .textField).element
         textField.tap()
@@ -96,4 +93,5 @@ class SanityUITests: XCTestCase {
         XCTAssertEqual(app.tableRows.count, 0 )
         //XCTAssertEqual(app.tables.otherElements["MESSAGES"].exists)
     }
+
 }

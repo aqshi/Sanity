@@ -22,7 +22,7 @@ struct Category {
         //var categoryID = ""
         self.name = name
         self.amountLimit = amountLimit
-        self.amountUsed = 0
+        self.amountUsed = amountUsed
         self.notificationPercent = notificationPercent
         self.purchaseList = purchaseList
     }
@@ -31,9 +31,15 @@ struct Category {
     
     mutating func calcUsed() -> Double {
         self.amountUsed = 0
-        for(String , Purchase) in purchaseList{
+        for( _ , Purchase) in purchaseList{
             amountUsed = amountUsed + Purchase.price!
         }
         return amountUsed
+    }
+    
+    mutating func clearPurchases(){
+        for( String , _ ) in purchaseList{
+            self.purchaseList.removeValue(forKey: String)
+        }
     }
 }

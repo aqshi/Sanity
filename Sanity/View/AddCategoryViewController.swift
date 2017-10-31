@@ -13,7 +13,8 @@ class AddCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        amountField.text = "$0.00"
         // Do any additional setup after loading the view.
     }
 
@@ -40,8 +41,18 @@ class AddCategoryViewController: UIViewController {
         let amountDisplay = Double(amountField.text!)
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        amountField.text = formatter.string(from: NSNumber(value:amountDisplay!))
-        doubletoStore = amountDisplay!
+        
+        
+        let ADString = amountField.text!
+        let ADParts = ADString.components(separatedBy: ".")
+        if (ADParts.count <= 2 && ADString.range(of: "..") == nil) {
+            amountField.text = formatter.string(from: NSNumber(value:amountDisplay!))
+            doubletoStore = amountDisplay!
+        }
+        else {
+            amountField.text = "Invalid Number"
+            doubletoStore = 0
+        }
     }
   
     
