@@ -7,7 +7,7 @@
 		<key>Charts.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>GTMOAuth2.xcscheme</key>
 		<dict>
@@ -22,7 +22,7 @@
 		<key>GoogleToolboxForMac-Defines-NSData+zlib.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>GoogleToolboxForMac-f0850809.xcscheme</key>
 		<dict>
@@ -43,6 +43,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>10</integer>
+		</dict>
+		<key>Pods-UnitTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
