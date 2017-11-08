@@ -281,26 +281,41 @@ struct Budget{
             if(Int(alwaysResetOn)! > 28){
                 actingARD = "28"
             }
+            else {
+                actingARD = alwaysResetOn
+            }
         }
         //check if we are a 30 day month
         else if(currentDateString.contains("Sep")){
             if(Int(alwaysResetOn)! > 30){
                 actingARD = "30"
             }
+            else {
+                actingARD = alwaysResetOn
+            }
         }
         else if(currentDateString.contains("Apr")){
             if(Int(alwaysResetOn)! > 30){
                 actingARD = "30"
+            }
+            else {
+                actingARD = alwaysResetOn
             }
         }
         else if(currentDateString.contains("Jun")){
             if(Int(alwaysResetOn)! > 30){
                 actingARD = "30"
             }
+            else {
+                actingARD = alwaysResetOn
+            }
         }
         else if(currentDateString.contains("Nov")){
             if(Int(alwaysResetOn)! > 30){
                 actingARD = "30"
+            }
+            else {
+                actingARD = alwaysResetOn
             }
         }
         else {
