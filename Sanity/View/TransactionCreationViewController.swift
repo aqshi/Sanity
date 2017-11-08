@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionCreationViewController: UIViewController {
+class TransactionCreationViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var transactionNameTextField: UITextField!
     @IBOutlet weak var TransactionAmountTextField: UITextField!
     @IBOutlet weak var TransactionDescriptionTextField: UITextField!
@@ -22,6 +22,8 @@ class TransactionCreationViewController: UIViewController {
         TransactionAmountTextField.text = "$0.00"
         
         // Do any additional setup after loading the view.
+        tipPicker.dataSource = self
+        tipPicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +59,13 @@ class TransactionCreationViewController: UIViewController {
             TransactionAmountTextField.text = "Invalid Number"
             doubletoStore = 0
         }
+        
+        //update tip label
+       
+        tipPercent = percentChosen * 0.05
+        tipToAdd = doubletoStore * tipPercent
+        formatter.numberStyle = .currency
+        tipDisplay.text = formatter.string(from: NSNumber(value:doubletoStore * tipPercent))
     }
     
     //datePicker//datePicker//datePicker//datePicker//datePicker//datePicker
@@ -82,7 +91,7 @@ class TransactionCreationViewController: UIViewController {
     
     @IBAction func confirmAddTransaction(_ sender: Any) {
         name = transactionNameTextField.text!
-        amnt = doubletoStore
+        amnt = doubletoStore + tipToAdd
         desc = TransactionDescriptionTextField.text!
         recordDate(myDate)
         print(name)
@@ -113,5 +122,43 @@ class TransactionCreationViewController: UIViewController {
         let updater = NSNotification.Name("reloadCat")
         NotificationCenter.default.post(name: updater, object: nil)
     }
+    
+    //picker for the tip
+    
+    @IBOutlet weak var tipPicker: UIPickerView!
+    let percent = ["0%","5%","10%","15%","20%","25%","30%","35%","40%"
+        ,"45%","50%","55%","60%","65%","70%","75%","80%",
+         "85%","90%","95%","100%"]
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return percent[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return percent.count
+    }
+    
+    //This is where we record the picker selection
+    @IBOutlet weak var tipDisplay: UILabel!
+    var tipPercent : Double = 0;
+    var tipToAdd : Double = 0;
+    
+    var percentChosen : Double = 0;
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        percentChosen = Double(row)
+        
+        tipPercent = percentChosen * 0.05
+        tipToAdd = doubletoStore * tipPercent
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        tipDisplay.text = formatter.string(from: NSNumber(value:tipToAdd))
+        
+        
+    }
+    
 
 }
