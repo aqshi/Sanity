@@ -128,6 +128,8 @@
                         <outlet property="TransactionAmountTextField" destination="6k4-Wj-OIm" id="psW-nc-BfZ"/>
                         <outlet property="TransactionDescriptionTextField" destination="L3X-t2-b63" id="ZaF-VZ-H0I"/>
                         <outlet property="myDate" destination="WO7-xm-pbi" id="IGN-fb-Y9F"/>
+                        <outlet property="tipDisplay" destination="2W5-A8-P4A" id="QK2-qj-UAt"/>
+                        <outlet property="tipPicker" destination="dLh-Et-RZf" id="FiE-1E-B06"/>
                         <outlet property="transactionNameTextField" destination="rEy-0W-cQu" id="iYr-lx-8Iz"/>
                     </connections>
                 </viewController>
