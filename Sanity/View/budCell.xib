@@ -35,7 +35,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Spent:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZz-4y-0y2">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZz-4y-0y2">
                         <rect key="frame" x="8" y="37" width="162" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -96,6 +96,7 @@
                 <outlet property="budName" destination="FTj-uq-Zas" id="PYw-yG-9j1"/>
                 <outlet property="dateReset" destination="WEg-ke-aTi" id="vxX-l0-SNg"/>
                 <outlet property="limit" destination="Raw-II-OtY" id="UME-R8-saN"/>
+                <outlet property="remaining" destination="19J-MY-TLW" id="u0v-7X-2tG"/>
                 <outlet property="spent" destination="19J-MY-TLW" id="XlG-7g-Nz8"/>
             </connections>
             <point key="canvasLocation" x="335" y="29"/>

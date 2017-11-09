@@ -23,6 +23,6 @@ class budCell: UITableViewCell {
     
     @IBOutlet weak var dateReset: UILabel!
     @IBOutlet weak var budName: UILabel!
-    @IBOutlet weak var spent: UILabel!
+    @IBOutlet weak var remaining: UILabel!
     @IBOutlet weak var limit: UILabel!
 }

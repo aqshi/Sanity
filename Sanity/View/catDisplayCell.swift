@@ -22,7 +22,7 @@ class catDisplayCell: UITableViewCell {
     }
     
     @IBOutlet weak var catName: UILabel!
-    @IBOutlet weak var spent: UILabel!
+    @IBOutlet weak var remaining: UILabel!
     @IBOutlet weak var total: UILabel!
     @IBOutlet weak var progress: UILabel!
     

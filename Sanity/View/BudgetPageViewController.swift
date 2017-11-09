@@ -53,7 +53,7 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
         for(String, Category) in (Dummy.user.budgetList[globalBudget]?.categoryList)! {
             nameList.append(String)
             totalList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)!)
-            spentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)!)
+            spentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)! - (Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)!)
             percentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)! / (Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)! )
         }
     }
@@ -87,7 +87,7 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
         cell.catName.text = nameList[indexPath.row]
         cell.total.text = String(format:"%.2f",totalList[indexPath.row])
         cell.progress.text = String(format:"%.2f",percentList[indexPath.row])
-        cell.spent.text = String(format:"%.2f",spentList[indexPath.row])
+        cell.remaining.text = String(format:"%.2f",spentList[indexPath.row])
         return cell
     }
     
