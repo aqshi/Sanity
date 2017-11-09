@@ -68,7 +68,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
             self.resetdatesList.removeAll()
             for(Name, Budget) in Dummy.user.budgetList {
                 self.nameList.append(Name)
-                self.spentList.append(String(format:"%.2f",Budget.budgetUsed))
+                self.spentList.append(String(format:"%.2f", (Budget.budgetAmount - Budget.budgetUsed) ))
                 self.totalList.append(String(format:"%.2f",Budget.budgetAmount))
                 if(Budget.nextDateResetString != "01 Jan 9999"){
                     resetdatesList.append(Budget.nextDateResetString)

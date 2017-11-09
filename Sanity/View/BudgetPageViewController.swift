@@ -53,7 +53,7 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
         for(String, Category) in (Dummy.user.budgetList[globalBudget]?.categoryList)! {
             nameList.append(String)
             totalList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)!)
-            spentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)! - (Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)!)
+            spentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)! - (Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)!)
             percentList.append((Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountUsed)! / (Dummy.user.budgetList[globalBudget]?.categoryList[String]?.amountLimit)! )
         }
     }
