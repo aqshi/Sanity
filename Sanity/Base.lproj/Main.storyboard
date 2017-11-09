@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sz1-Hq-Uxb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sz1-Hq-Uxb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -232,7 +232,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="CgG-g0-qX8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Analytics" image="google.png" id="ZPs-Sz-2wZ"/>
+                    <tabBarItem key="tabBarItem" title="Analytics" image="question" id="ZPs-Sz-2wZ"/>
                     <connections>
                         <outlet property="BudgetTF" destination="DOR-W2-Eqx" id="vdb-3S-Pdb"/>
                         <outlet property="CategoryTF" destination="60O-ny-wJV" id="cnd-mX-sKA"/>
@@ -304,7 +304,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="CmR-7n-qDy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" image="google.png" id="hAu-BW-PjU"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="cards" id="hAu-BW-PjU"/>
                     <connections>
                         <outlet property="myTableView" destination="mXO-bm-A8K" id="o0z-QQ-f1s"/>
                         <segue destination="sz1-Hq-Uxb" kind="show" identifier="LoggedOut" id="aLa-bV-Zr5"/>
@@ -382,7 +382,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Gg-Yj-l7t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="hdl-d3-N4N" kind="relationship" relationship="viewControllers" id="UJZ-Op-upB"/>
@@ -1384,11 +1384,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="google.png" width="18" height="18"/>
+        <image name="cards" width="25" height="25"/>
+        <image name="question" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="i1T-aY-Jvk"/>
-        <segue reference="Yuh-RD-k8S"/>
+        <segue reference="rYj-UW-JBV"/>
         <segue reference="e9T-ac-2iY"/>
         <segue reference="UJZ-Op-upB"/>
     </inferredMetricsTieBreakers>
