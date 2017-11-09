@@ -91,6 +91,14 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
     
     @IBAction func confirmAddTransaction(_ sender: Any) {
         name = transactionNameTextField.text!
+        
+        //make name unique
+        var dupeCounter = 1
+        while (Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList.keys.contains(name))!{
+            name = transactionNameTextField.text! + String(dupeCounter)
+            dupeCounter += 1
+        }
+        
         amnt = doubletoStore + tipToAdd
         desc = TransactionDescriptionTextField.text!
         if(name == "") {

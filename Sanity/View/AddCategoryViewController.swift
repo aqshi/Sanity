@@ -57,8 +57,18 @@ class AddCategoryViewController: UIViewController {
   
     
     @IBAction func saveData(_ sender: Any) {
+        
+        var catName = nameField.text
+        var dupeCounter = 1
+        
+        while (Dummy.user.budgetList[globalBudget]?.categoryList.keys.contains(catName!))!{
+            catName = nameField.text! + String(dupeCounter)
+            dupeCounter += 1
+        }
+        
+        
         let cat = Category(
-            name: nameField.text! ,
+            name: catName! ,
             amountLimit: doubletoStore,
             amountUsed: 0,
             notificationPercent: (Dummy.user.budgetList[globalBudget]!.notificationPercent),
@@ -66,7 +76,7 @@ class AddCategoryViewController: UIViewController {
         )
         
         //add it to the current budget
-        Dummy.user.budgetList[globalBudget]?.categoryList[nameField.text!] = cat
+        Dummy.user.budgetList[globalBudget]?.categoryList[catName!] = cat
         Dummy.user2 = Dummy.user
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
