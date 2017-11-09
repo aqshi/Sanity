@@ -84,6 +84,10 @@ class TransactionCreationViewController: UIViewController {
         name = transactionNameTextField.text!
         amnt = doubletoStore
         desc = TransactionDescriptionTextField.text!
+        if(name == "") {
+            transactionNameTextField.placeholder = "Name cannot be empty"
+            return
+        }
         recordDate(myDate)
         print(name)
         print(amnt)

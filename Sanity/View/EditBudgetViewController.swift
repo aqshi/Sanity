@@ -126,7 +126,7 @@ class EditBudgetViewController: UIViewController , UIPickerViewDelegate , UIPick
     var canChangeWarning : Bool = false
     @IBAction func confirmChanges(_ sender: Any) {
         newBudgetName = nameField.text!
-        
+        if(newBudgetName == "") {return}
         //If the name was changed
         if (newBudgetName != globalBudget){
             
