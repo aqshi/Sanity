@@ -97,7 +97,6 @@
                 <outlet property="dateReset" destination="WEg-ke-aTi" id="vxX-l0-SNg"/>
                 <outlet property="limit" destination="Raw-II-OtY" id="UME-R8-saN"/>
                 <outlet property="remaining" destination="19J-MY-TLW" id="u0v-7X-2tG"/>
-                <outlet property="spent" destination="19J-MY-TLW" id="XlG-7g-Nz8"/>
             </connections>
             <point key="canvasLocation" x="335" y="29"/>
         </tableViewCell>

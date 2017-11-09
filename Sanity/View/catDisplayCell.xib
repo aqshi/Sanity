@@ -80,7 +80,6 @@
                 <outlet property="catName" destination="7u1-6A-OZH" id="Ebc-uO-Re9"/>
                 <outlet property="progress" destination="67K-jM-tWJ" id="vUB-LM-KlO"/>
                 <outlet property="remaining" destination="g5g-uc-Zrq" id="gke-k7-fOv"/>
-                <outlet property="spent" destination="g5g-uc-Zrq" id="c5a-No-D3I"/>
                 <outlet property="total" destination="9et-hG-fdY" id="Zmy-bp-oZy"/>
             </connections>
             <point key="canvasLocation" x="34" y="68.5"/>
