@@ -68,7 +68,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
             self.resetdatesList.removeAll()
             for(Name, Budget) in Dummy.user.budgetList {
                 self.nameList.append(Name)
-                self.spentList.append(String(format:"%.2f",Budget.budgetUsed))
+                self.spentList.append(String(format:"%.2f", (Budget.budgetAmount - Budget.budgetUsed) ))
                 self.totalList.append(String(format:"%.2f",Budget.budgetAmount))
                 if(Budget.nextDateResetString != "01 Jan 9999"){
                     resetdatesList.append(Budget.nextDateResetString)
@@ -118,7 +118,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         let cell = myTableView.dequeueReusableCell(withIdentifier: "budCell", for: indexPath) as! budCell
         cell.budName.text = nameList[indexPath.row]
         cell.limit.text = totalList[indexPath.row]
-        cell.spent.text = spentList[indexPath.row]
+        cell.remaining.text = spentList[indexPath.row]
         cell.dateReset.text = resetdatesList[indexPath.row]
         return cell
     }
@@ -144,7 +144,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         resetdatesList.removeAll()
         for(Name, Budget) in Dummy.user.budgetList {
             nameList.append(Name)
-            spentList.append(String(format:"%.2f",Budget.budgetUsed))
+            spentList.append(String(format:"%.2f", (Budget.budgetAmount - Budget.budgetUsed) ))
             totalList.append(String(format:"%.2f",Budget.budgetAmount))
             if(Budget.nextDateResetString != "01 Jan 9999"){
                 resetdatesList.append(Budget.nextDateResetString)
