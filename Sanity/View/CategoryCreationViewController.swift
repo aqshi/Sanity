@@ -62,7 +62,7 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
             if let customCell = cell as? catCell {
                 customCell.store()
                 //Create the Category to add
-                
+                if(customCell.name == "") {return}
                 var catName = customCell.name
                 var dupeCounter = 1
                 
