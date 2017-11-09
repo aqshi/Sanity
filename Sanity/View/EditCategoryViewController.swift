@@ -69,7 +69,7 @@ class EditCategoryViewController: UIViewController {
     @IBAction func saveAll(_ sender: Any) {
         
         nametoStore = name.text!
-        
+        if(nametoStore == ""){return}
         //update the category HERE
               Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.name = nametoStore
                    Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.amountLimit = doubletoStore

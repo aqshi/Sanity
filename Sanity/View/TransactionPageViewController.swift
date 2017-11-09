@@ -78,6 +78,9 @@ class TransactionPageViewController: UIViewController {
         var memotoStore : String = ""
         nametoStore = nameField.text!
         memotoStore = memoField.text!
+        if(nametoStore == "") {
+            return
+        }
         recorddate(myDate)
         
         //crate purchase

@@ -144,7 +144,9 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
     var myIntervals : Int = 0
     var mystartDates : Int = 0
     @IBAction func recordInput(_ sender: Any) {
-        
+        if(nameField.text! == "") {
+            return
+        }
         
         //Table 1 - Date Picker
         for cell in myTableView.visibleCells {
