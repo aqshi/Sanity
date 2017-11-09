@@ -62,14 +62,24 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
             if let customCell = cell as? catCell {
                 customCell.store()
                 //Create the Category to add
+                
+                var catName = customCell.name
+                var dupeCounter = 1
+                
+                while (Dummy.user.budgetList[globalBudget]?.categoryList.keys.contains(catName))!{
+                    catName = customCell.name + String(dupeCounter)
+                    dupeCounter += 1
+                }
+                
+                
                 let cat = Category(
-                    name: customCell.name,
+                    name: catName,
                     amountLimit: customCell.budg,
                     amountUsed: 0,
                     notificationPercent: (Dummy.user.budgetList[budgetName]!.notificationPercent),
                     purchaseList: [String : Purchase]()
                 )
-                Dummy.user.budgetList[budgetName]!.categoryList[customCell.name] = cat
+                Dummy.user.budgetList[budgetName]!.categoryList[catName] = cat
             }
         }
         Dummy.user2 = Dummy.user

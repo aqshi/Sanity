@@ -163,7 +163,14 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
         }
         
         //Store name here
-        let budgetName = nameField.text
+        var budgetName = nameField.text
+        var dupeCounter = 1
+        
+        while (Dummy.user.budgetList.keys.contains(budgetName!)){
+            budgetName = nameField.text! + String(dupeCounter)
+            dupeCounter += 1
+        }
+        
         DispatchQueue.main.async {
             //declare newBudget
             let newBudget = Budget(name: budgetName! , intervalStartDate: String(self.mystartDates), intervalResetOn:0, alwaysResetOn: String(self.mydates), resetInterval: String(self.myIntervals), budgetAmount: 0, budgetUsed: 0, notificationPercent: Double((self.percentChosen) * 5), notificationFrequency: "1", categoryList: [String : Category]())
