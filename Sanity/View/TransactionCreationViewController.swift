@@ -93,6 +93,10 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
         name = transactionNameTextField.text!
         amnt = doubletoStore + tipToAdd
         desc = TransactionDescriptionTextField.text!
+        if(name == "") {
+            transactionNameTextField.placeholder = "Name cannot be empty"
+            return
+        }
         recordDate(myDate)
         print(name)
         print(amnt)

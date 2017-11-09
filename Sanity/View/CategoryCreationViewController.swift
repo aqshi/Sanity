@@ -62,6 +62,7 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
             if let customCell = cell as? catCell {
                 customCell.store()
                 //Create the Category to add
+                if(customCell.name == "") {return}
                 let cat = Category(
                     name: customCell.name,
                     amountLimit: customCell.budg,
