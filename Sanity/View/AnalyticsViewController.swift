@@ -10,6 +10,19 @@ import UIKit
 import Charts
 
 class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.confirmButton.alpha = 0
+        self.BudgetTF.alpha = 0
+        self.CategoryTF.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.confirmButton.alpha = 1
+            self.BudgetTF.alpha = 1
+            self.CategoryTF.alpha = 1
+        }, completion: nil)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

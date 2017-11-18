@@ -9,7 +9,10 @@
 import UIKit
 
 class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+    @IBOutlet weak var newButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = 100
@@ -31,6 +34,15 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.newButton.alpha = 0
+        self.backButton.alpha = 0
+        self.editButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.newButton.alpha = 1
+            self.backButton.alpha = 1
+            self.editButton.alpha = 1
+        }, completion: nil)
+        
         if(Dummy.user2.userID != "") {
             Dummy.user = Dummy.user2
         }
@@ -125,6 +137,14 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
         let cell = myTableView.cellForRow(at: indexPath)
         Dummy.currentPurchaseName = (cell as! TransCell).nameLabel.text!
         globalPurchase = (cell as! TransCell).nameLabel.text!
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -cell.frame.width, 1, 1)
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DIdentity
+        }
     }
     
     func toTransPage(){

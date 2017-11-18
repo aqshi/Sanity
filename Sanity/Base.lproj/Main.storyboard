@@ -152,6 +152,8 @@
                     <connections>
                         <outlet property="TransactionAmountTextField" destination="6k4-Wj-OIm" id="psW-nc-BfZ"/>
                         <outlet property="TransactionDescriptionTextField" destination="L3X-t2-b63" id="ZaF-VZ-H0I"/>
+                        <outlet property="cancelButton" destination="cRh-ph-ujF" id="izh-4T-jNY"/>
+                        <outlet property="confirmButton" destination="pOH-0I-zGV" id="2cy-aM-epY"/>
                         <outlet property="myDate" destination="WO7-xm-pbi" id="IGN-fb-Y9F"/>
                         <outlet property="tipDisplay" destination="05H-vk-E8T" id="KXS-TD-M0Q"/>
                         <outlet property="tipPicker" destination="2WS-i7-fYk" id="Rpa-kF-cDv"/>
@@ -213,6 +215,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.25361475350000001" green="0.48912695049999999" blue="0.30985489490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXo-jR-CtV" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="240" width="375" height="378"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99M-iR-bcN">
                                 <rect key="frame" x="16" y="186" width="343" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -223,11 +230,6 @@
                                     <action selector="confirmPressed:" destination="Dop-hS-ctp" eventType="touchUpInside" id="y2E-vG-2MT"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXo-jR-CtV" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="240" width="375" height="378"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="CgG-g0-qX8"/>
@@ -236,7 +238,10 @@
                     <connections>
                         <outlet property="BudgetTF" destination="DOR-W2-Eqx" id="vdb-3S-Pdb"/>
                         <outlet property="CategoryTF" destination="60O-ny-wJV" id="cnd-mX-sKA"/>
+                        <outlet property="budgetTF" destination="DOR-W2-Eqx" id="6aH-pF-mwj"/>
+                        <outlet property="categoryTF" destination="60O-ny-wJV" id="m8V-Yp-2st"/>
                         <outlet property="chtChart" destination="WXo-jR-CtV" id="s1c-0s-mai"/>
+                        <outlet property="confirmButton" destination="99M-iR-bcN" id="tHl-KD-63f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HqR-Zd-mxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,8 +282,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l94-UY-z0m">
-                                        <rect key="frame" x="72" y="14" width="230" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0085513503849999999" blue="0.098483178379999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <state key="normal" title="Log Out">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -306,7 +312,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="cards" id="hAu-BW-PjU"/>
                     <connections>
+                        <outlet property="logoutButton" destination="l94-UY-z0m" id="y2p-g8-xrA"/>
                         <outlet property="myTableView" destination="mXO-bm-A8K" id="o0z-QQ-f1s"/>
+                        <outlet property="newBudgetButton" destination="U1t-Ob-261" id="iNJ-Qt-d8d"/>
                         <segue destination="sz1-Hq-Uxb" kind="show" identifier="LoggedOut" id="aLa-bV-Zr5"/>
                         <segue destination="M7u-uW-ibZ" kind="show" identifier="toBudgPage" id="rYj-UW-JBV"/>
                     </connections>
@@ -493,6 +501,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="mpJ-r5-hS8" id="AY6-l5-vUL"/>
+                        <outlet property="continueButton" destination="sjq-KA-ogz" id="pRh-a0-3ws"/>
                         <outlet property="myTableView" destination="x01-XH-HaJ" id="ThQ-Tw-O57"/>
                         <outlet property="myTableView2" destination="UPK-N4-6Hr" id="Uj6-p0-Aib"/>
                         <outlet property="nameField" destination="3K2-Sj-UIk" id="YHU-dm-2y9"/>
@@ -595,7 +605,7 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="retrieveVals:" destination="viL-Ig-Z9x" eventType="touchUpInside" id="PBf-WA-euo"/>
-                                    <segue destination="hdl-d3-N4N" kind="show" id="2uO-Lk-EwY"/>
+                                    <segue destination="Fve-K1-54S" kind="show" id="xg1-pT-yFW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-Bb-ibY">
@@ -617,6 +627,9 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="AoB-Bb-ibY" id="dtY-7V-m9f"/>
+                        <outlet property="cancelButton" destination="jDz-7N-n7a" id="Uqn-NI-Izu"/>
+                        <outlet property="confirmButton" destination="3xo-TP-SDW" id="Sk9-KA-Men"/>
                         <outlet property="myTableView" destination="5M8-mb-C2V" id="jiT-3V-cBW"/>
                     </connections>
                 </viewController>
@@ -727,6 +740,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="AEa-QJ-n1b"/>
                     <connections>
+                        <outlet property="addButton" destination="1fN-s0-TWE" id="bLh-Ua-H3n"/>
+                        <outlet property="backButton" destination="cPK-Ii-Wf6" id="vFb-TV-Mtm"/>
+                        <outlet property="editButton" destination="hmC-l3-QyO" id="uyz-7V-YZQ"/>
                         <outlet property="myTableView" destination="WaW-Iy-DEA" id="FGR-8z-Br7"/>
                         <segue destination="kxF-mD-uSN" kind="show" identifier="toCatPage" id="rPw-gQ-Ydd"/>
                     </connections>
@@ -827,6 +843,8 @@
                     <tabBarItem key="tabBarItem" title="Main" id="g8D-TN-WhA"/>
                     <connections>
                         <outlet property="amountField" destination="ufv-0g-dWs" id="NT9-uc-qBD"/>
+                        <outlet property="cancelButton" destination="QB1-wJ-jjf" id="75a-zu-utu"/>
+                        <outlet property="confirmButton" destination="eR2-Wb-Xby" id="jzd-6R-p5q"/>
                         <outlet property="nameField" destination="SaQ-7v-rBS" id="yLQ-SD-4cc"/>
                     </connections>
                 </viewController>
@@ -1027,6 +1045,8 @@
                         <outlet property="button1" destination="PkW-aR-xY6" id="1Ba-0I-0jZ"/>
                         <outlet property="button2" destination="Uvy-vl-oGn" id="omT-YA-VZb"/>
                         <outlet property="button3" destination="C2M-g2-1qD" id="t63-As-5Pz"/>
+                        <outlet property="cancelButton" destination="pZ8-ma-8wt" id="sdy-pG-zlC"/>
+                        <outlet property="confirmButton" destination="dSe-ha-3Vy" id="RtT-F9-e0V"/>
                         <outlet property="dayPicker" destination="psW-BV-8VJ" id="PfS-gE-9rE"/>
                         <outlet property="fixedDatePicker" destination="Auw-bM-Uz8" id="iYg-ms-UcK"/>
                         <outlet property="intervalChooser" destination="V0w-7B-zgp" id="R6r-r2-uD6"/>
@@ -1139,7 +1159,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="2xa-ro-yoo"/>
                     <connections>
+                        <outlet property="backButton" destination="OIF-xX-lzE" id="6GV-xt-zOI"/>
+                        <outlet property="editButton" destination="tUB-C0-aly" id="cne-gS-leR"/>
                         <outlet property="myTableView" destination="al2-Jm-yQQ" id="kYs-Xi-N5M"/>
+                        <outlet property="newButton" destination="K6y-eh-6aq" id="6Rw-Bg-bMD"/>
                         <segue destination="ftL-Yb-bx1" kind="show" identifier="toTransPage" id="08T-tP-4uP"/>
                     </connections>
                 </viewController>
@@ -1261,6 +1284,8 @@
                     <tabBarItem key="tabBarItem" title="Main" id="DaA-KY-JHO"/>
                     <connections>
                         <outlet property="amountField" destination="oHd-rK-HMw" id="ZwM-wk-Akj"/>
+                        <outlet property="cancelButton" destination="8Yc-Sy-Co1" id="fvi-7q-Y80"/>
+                        <outlet property="confirmButton" destination="0xY-B1-Ub1" id="Uij-bj-grQ"/>
                         <outlet property="memoField" destination="iyc-9K-KRv" id="ZCF-oA-MKn"/>
                         <outlet property="myDate" destination="RfD-l8-P0q" id="r3p-QM-iOa"/>
                         <outlet property="nameField" destination="MQE-X4-dqJ" id="ZBy-oA-Z9j"/>
@@ -1369,6 +1394,8 @@
                     <tabBarItem key="tabBarItem" title="Main" id="0kQ-ew-GKN"/>
                     <connections>
                         <outlet property="amnt" destination="ihn-Ch-DdA" id="Way-Ai-hba"/>
+                        <outlet property="cancelButton" destination="8r7-1d-oDd" id="xZ3-gI-ffX"/>
+                        <outlet property="confirmButton" destination="N4N-lt-XoS" id="kdd-fp-T8T"/>
                         <outlet property="name" destination="vAb-hG-Wml" id="7tp-QI-laa"/>
                     </connections>
                 </viewController>
@@ -1387,10 +1414,9 @@
         <image name="question" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i1T-aY-Jvk"/>
-        <segue reference="rYj-UW-JBV"/>
+        <segue reference="e2D-U1-NR8"/>
+        <segue reference="GnY-Th-XXH"/>
         <segue reference="e9T-ac-2iY"/>
-        <segue reference="UJZ-Op-upB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

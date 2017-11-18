@@ -9,6 +9,8 @@
 import UIKit
 
 class EditCategoryViewController: UIViewController {
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,12 @@ class EditCategoryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.confirmButton.alpha = 0
+        self.cancelButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.confirmButton.alpha = 1
+            self.cancelButton.alpha = 1
+        }, completion: nil)
         originalName = (Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.name)!
         originalDouble = (Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.amountLimit)!
         

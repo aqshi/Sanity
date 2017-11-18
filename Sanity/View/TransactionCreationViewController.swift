@@ -12,6 +12,8 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
     @IBOutlet weak var transactionNameTextField: UITextField!
     @IBOutlet weak var TransactionAmountTextField: UITextField!
     @IBOutlet weak var TransactionDescriptionTextField: UITextField!
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.transactionNameTextField.delegate = self as? UITextFieldDelegate
@@ -26,6 +28,15 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
         tipPicker.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.confirmButton.alpha = 0
+        self.cancelButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.confirmButton.alpha = 1
+            self.cancelButton.alpha = 1
+        }, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -12,7 +12,8 @@ import FirebaseDatabase
 import GoogleSignIn
 
 class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
-    
+    @IBOutlet weak var newBudgetButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = 100
@@ -22,9 +23,16 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         //so we can refresh this view form somewhere else
         let updater = NSNotification.Name("reloadMain")
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: updater, object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.newBudgetButton.alpha = 0
+        self.logoutButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.newBudgetButton.alpha = 1
+            self.logoutButton.alpha = 1
+        }, completion: nil)
         print("BEGIN \(Dummy.user)")
         if(Dummy.delay == true) {
             self.numCells = Dummy.user.budgetList.count
@@ -50,6 +58,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
             }
             DispatchQueue.main.async {
                 self.myTableView.reloadData()
+                
             }
             Dummy.delay = false
         } else {
@@ -77,7 +86,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
                     resetdatesList.append("Never")
                 }
             }
-                self.myTableView.reloadData()
+            self.myTableView.reloadData()
         }
     }
     
@@ -153,7 +162,7 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
                 resetdatesList.append("Never")
             }
         }
-        myTableView.reloadData()
+        self.myTableView.reloadData()
         Dummy.user2 = Dummy.user
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
@@ -161,6 +170,28 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        //MARK:- Fade transition Animation
+//        cell.alpha = 0
+//        UIView.animate(withDuration: 1) {
+//            cell.alpha = 1
+//        }
+        
+        //MARK:- Curl transition Animation
+        // cell.layer.transform = CATransform3DScale(CATransform3DIdentity, -1, 1, 1)
+        
+        // UIView.animate(withDuration: 0.4) {
+        //  cell.layer.transform = CATransform3DIdentity
+        //}
+        
+        //MARK:- Frame Translation Animation
+        cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -cell.frame.width, 1, 1)
+        
+         UIView.animate(withDuration: 0.5) {
+          cell.layer.transform = CATransform3DIdentity
+         }
+    }
     
     //Table Movement//Table Movement//Table Movement//Table Movement
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
