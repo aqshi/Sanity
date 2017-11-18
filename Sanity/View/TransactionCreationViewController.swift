@@ -122,11 +122,15 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
             print("Add purchase \(Dummy.user)")
-            let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
+            let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!)
             let RemainRatio = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) / Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
 
             let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.recentIntervalResetString;
-            if(RemainRatio >= (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!){
+            print("ttttttttttttttttttttttttttttttttttttttttttttttttt")
+            print(RemainRatio)
+            print((Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!)
+            print("ttttttttttttttttttttttttttttttttttttttttttttttttt")
+            if(RemainRatio*100 >= (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!){
                 User.purchaseOverLimitNotification(Budgetname: Dummy.currentBudgetName, Categoryname: Dummy.currentCategoryName, AmountLeft: RemainBalance, timeRemain: time!, Repeat: (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationFrequency)!)
             }
         }
