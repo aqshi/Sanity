@@ -10,6 +10,9 @@ import UIKit
 
 class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     
     var nameList = [String]()
@@ -32,6 +35,14 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.addButton.alpha = 0
+        self.backButton.alpha = 0
+        self.editButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.addButton.alpha = 1
+            self.backButton.alpha = 1
+            self.editButton.alpha = 1
+        }, completion: nil)
         
         numCells = (Dummy.user.budgetList[globalBudget]!.categoryList.count)
         
@@ -123,6 +134,14 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
         DispatchQueue.main.async {
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
             print("Deleted \(Dummy.user)")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -cell.frame.width, 1, 1)
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DIdentity
         }
     }
     

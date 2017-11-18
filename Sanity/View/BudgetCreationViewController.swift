@@ -11,6 +11,8 @@ import UIKit
 
 
 class BudgetCreationViewController: UIViewController , UITableViewDelegate , UITableViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate{
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var names : [String] = [String]()
     override func viewDidLoad() {
@@ -35,6 +37,16 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
                    NotificationCenter.default.addObserver(self, selector: #selector(self.viewDidLoad), name: updater, object: nil)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.continueButton.alpha = 0
+        self.cancelButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.continueButton.alpha = 1
+            self.cancelButton.alpha = 1
+        }, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

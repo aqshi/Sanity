@@ -9,6 +9,9 @@
 import UIKit
 
 class CategoryCreationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,16 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.addButton.alpha = 0;
+        self.confirmButton.alpha = 0
+        self.cancelButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.addButton.alpha = 1
+            self.confirmButton.alpha = 1
+            self.cancelButton.alpha = 1
+        }, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

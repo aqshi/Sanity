@@ -10,6 +10,8 @@ import UIKit
 
 class AddCategoryViewController: UIViewController {
     
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,16 @@ class AddCategoryViewController: UIViewController {
         amountField.text = "$0.00"
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.confirmButton.alpha = 0
+        self.cancelButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.confirmButton.alpha = 1
+            self.cancelButton.alpha = 1
+        }, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

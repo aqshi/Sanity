@@ -10,6 +10,8 @@ import UIKit
 
 class TransactionPageViewController: UIViewController {
     
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         myDate.datePickerMode = UIDatePickerMode.date
@@ -18,6 +20,12 @@ class TransactionPageViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.confirmButton.alpha = 0
+        self.cancelButton.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {
+            self.confirmButton.alpha = 1
+            self.cancelButton.alpha = 1
+        }, completion: nil)
         nameField.text = Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.name
         memoField.text = Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.memo
         amountField.text = String(format:"%.2f",(Dummy.user.budgetList[globalBudget]?.categoryList[globalCat]?.purchaseList[globalPurchase]?.price)!)
