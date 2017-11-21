@@ -183,6 +183,8 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             name = NameTF.text!
             //make name unique
             var dupeCounter = 1
+            
+            //TODO: fix this up, pull the name form the pickers. idk how to do it atm
             while (Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList.keys.contains(name))!{
                 name = NameTF.text! + String(dupeCounter)
                 dupeCounter += 1
@@ -193,14 +195,13 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             desc = Description.text!
             recordDate(Calendar)
             let purchase = Purchase(name: name , price: amnt ,date: selectedDate, memo: desc)
+            //TODO: kin/joseph, your stuff goes here (Add to the map).
             
             
             
-            //reloadMain
+            //reloadMain and dismiss view!
             let notificationNme = NSNotification.Name("reloadMain")
             NotificationCenter.default.post(name: notificationNme, object: nil)
-            
-            
             self.dismiss(animated: true, completion: {})
         }
     }
