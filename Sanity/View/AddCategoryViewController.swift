@@ -15,7 +15,7 @@ class AddCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //nameField.text = "New Category"
         amountField.text = "$0.00"
         // Do any additional setup after loading the view.
     }
@@ -37,10 +37,13 @@ class AddCategoryViewController: UIViewController {
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     
-    
     var doubletoStore : Double = 0
     @IBAction func hideKeyboard(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    @IBAction func clearNameField(_ sender: Any) {
+        nameField.text = ""
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -68,6 +71,10 @@ class AddCategoryViewController: UIViewController {
   
     
     @IBAction func saveData(_ sender: Any) {
+        
+        if (nameField.text! == ""){
+            nameField.text = "New Category"
+        }
         
         var catName = nameField.text
         var dupeCounter = 1

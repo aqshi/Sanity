@@ -94,7 +94,9 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
             if let customCell = cell as? catCell {
                 customCell.store()
                 //Create the Category to add
-                if(customCell.name == "") {return}
+                if(customCell.name == "") {
+                    customCell.name = "New Category"
+                }
                 var catName = customCell.name
                 var dupeCounter = 1
                 

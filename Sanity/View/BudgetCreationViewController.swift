@@ -17,7 +17,7 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
     var names : [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //nameField.text = "New Budget"
         //sizes of our cells
         myTableView.rowHeight = 70
         myTableView2.rowHeight = 100
@@ -37,7 +37,7 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
                    NotificationCenter.default.addObserver(self, selector: #selector(self.viewDidLoad), name: updater, object: nil)
         
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.continueButton.alpha = 0
         self.cancelButton.alpha = 0
@@ -152,12 +152,13 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
     
     @IBOutlet weak var nameField: UITextField!
     
+    
     var mydates : Int = 0
     var myIntervals : Int = 0
     var mystartDates : Int = 0
     @IBAction func recordInput(_ sender: Any) {
         if(nameField.text! == "") {
-            return
+            nameField.text = "New Budget"
         }
         
         //Table 1 - Date Picker
@@ -177,21 +178,22 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
         }
         
         //Store name here
-        var budgetName = nameField.text
+        var budgetName = nameField.text!
+
         var dupeCounter = 1
         
-        while (Dummy.user.budgetList.keys.contains(budgetName!)){
+        while (Dummy.user.budgetList.keys.contains(budgetName)){
             budgetName = nameField.text! + String(dupeCounter)
             dupeCounter += 1
         }
         
         DispatchQueue.main.async {
             //declare newBudget
-            let newBudget = Budget(name: budgetName! , intervalStartDate: String(self.mystartDates), intervalResetOn:0, alwaysResetOn: String(self.mydates), resetInterval: String(self.myIntervals), budgetAmount: 0, budgetUsed: 0, notificationPercent: Double((self.percentChosen) * 5), notificationFrequency: "1", categoryList: [String : Category]())
-            
-            Dummy.user.budgetList[budgetName!] = newBudget
-            Dummy.currentBudgetName = budgetName!
-            globalBudget = budgetName!
+            let newBudget = Budget(name: budgetName , intervalStartDate: String(self.mystartDates), intervalResetOn:0, alwaysResetOn: String(self.mydates), resetInterval: String(self.myIntervals), budgetAmount: 0, budgetUsed: 0, notificationPercent: Double((self.percentChosen) * 5), notificationFrequency: "1", categoryList: [String : Category]())
+
+            Dummy.user.budgetList[budgetName] = newBudget
+            Dummy.currentBudgetName = budgetName
+            globalBudget = budgetName
             Dummy.user2 = Dummy.user
             Dummy.dc.pushUserToFirebase(user: Dummy.user)
         }

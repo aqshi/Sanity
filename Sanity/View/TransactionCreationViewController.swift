@@ -49,7 +49,7 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
     @IBAction func dismissKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
-    
+
     @IBAction func clearField(_ sender: Any) {
         TransactionAmountTextField.text = ""
     }
@@ -101,8 +101,10 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
     
     
     @IBAction func confirmAddTransaction(_ sender: Any) {
+        if(transactionNameTextField.text! == "") {
+            transactionNameTextField.text = "New Transaction"
+        }
         name = transactionNameTextField.text!
-        
         //make name unique
         var dupeCounter = 1
         while (Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList.keys.contains(name))!{
@@ -112,10 +114,7 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
         
         amnt = doubletoStore + tipToAdd
         desc = TransactionDescriptionTextField.text!
-        if(name == "") {
-            transactionNameTextField.placeholder = "Name cannot be empty"
-            return
-        }
+        
         recordDate(myDate)
         print(name)
         print(amnt)
