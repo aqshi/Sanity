@@ -14,7 +14,7 @@ class catCell: UITableViewCell {
         super.awakeFromNib()
         self.nameField.delegate = self as? UITextFieldDelegate
         self.budgetField.delegate = self as? UITextFieldDelegate
-        
+        //nameField.text = "New Category"
         budgetField.text = "$0.00"
     }
     @IBOutlet weak var nameField: UITextField!
