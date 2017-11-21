@@ -376,7 +376,7 @@
                                     <!--2017-10-17 01:43:51 +0000-->
                                 </date>
                                 <connections>
-                                    <action selector="recorddate:" destination="ftL-Yb-bx1" eventType="valueChanged" id="OKz-Yi-Bjs"/>
+                                    <action selector="recordDate:" destination="c1c-ck-hdR" eventType="valueChanged" id="ZcK-jE-KSh"/>
                                 </connections>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Optional Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ze1-gq-PUe">
@@ -429,7 +429,11 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="mcr-Sw-X11"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8s6-0L-rwU" appends="YES" id="yvg-vG-Gvg"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="AmntTF" destination="cV2-dH-skz" id="JCk-p6-R7A"/>
@@ -442,6 +446,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YgZ-L0-bVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8s6-0L-rwU">
+                    <connections>
+                        <action selector="formatNumbers:" destination="c1c-ck-hdR" id="Tro-gx-4pI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2596" y="-652.62368815592208"/>
         </scene>

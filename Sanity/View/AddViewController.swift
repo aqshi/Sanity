@@ -96,6 +96,7 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
         createBudgetPicker()
         createToolbar()
         // Do any additional setup after loading the view.
+        recordDate(self)
     }
     
     func check(){
@@ -134,10 +135,74 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     @IBAction func CancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: {})
     }
+    
+    
+    
+    
+    
+    
+    
+    var doubletoStore : Double = 0
+    @IBAction func formatNumbers(_ sender: Any) {
+        let amountDisplay = Double(AmntTF.text!)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        let ADString = AmntTF.text!
+        let ADParts = ADString.components(separatedBy: ".")
+        if (ADParts.count <= 2 && ADString.range(of: "..") == nil) {
+            AmntTF.text = formatter.string(from: NSNumber(value:amountDisplay!))
+            doubletoStore = amountDisplay!
+        }
+        else {
+            AmntTF.text = "Invalid Number"
+            doubletoStore = 0
+        }
+        
+    }
+    
+    var selectedDate : String = ""
+    @IBAction func recordDate(_ sender: Any) {
+        Calendar.datePickerMode = UIDatePickerMode.date
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        selectedDate = dateFormatter.string(from: Calendar.date)
+    }
+    
+    var name : String = ""
+    var amnt : Double = 0
+    var desc : String = ""
     @IBAction func DonePressed(_ sender: Any) {
         self.check()
         if(self.DoneButton.isEnabled){
             
+            //store the name
+            if(NameTF.text! == "") {
+                NameTF.text = "New Transaction"
+            }
+            name = NameTF.text!
+            //make name unique
+            var dupeCounter = 1
+            
+            //TODO: fix this up, pull the name form the pickers. idk how to do it atm
+            while (Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList.keys.contains(name))!{
+                name = NameTF.text! + String(dupeCounter)
+                dupeCounter += 1
+            }
+  
+            //store the amnt
+            amnt = doubletoStore
+            desc = Description.text!
+            recordDate(Calendar)
+            let purchase = Purchase(name: name , price: amnt ,date: selectedDate, memo: desc)
+            //TODO: kin/joseph, your stuff goes here (Add to the map).
+            
+            
+            
+            //reloadMain and dismiss view!
+            let notificationNme = NSNotification.Name("reloadMain")
+            NotificationCenter.default.post(name: notificationNme, object: nil)
+            self.dismiss(animated: true, completion: {})
         }
     }
     /*
