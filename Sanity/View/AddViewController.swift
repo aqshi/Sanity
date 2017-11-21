@@ -51,6 +51,7 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             CategoryTF.text = ""
             selectedCat1 = ""
             let temp = Dummy.user.budgetList[selectedBudget1]
+            Dummy.currentBudgetName = selectedBudget1
             categoryListHere1.removeAll()
             for (x,_) in (temp?.categoryList)! {
                 categoryListHere1.append(x)
@@ -61,6 +62,7 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             else{
                 selectedCat1 = categoryListHere1[row]
                 CategoryTF.text = selectedCat1;
+                Dummy.currentCategoryName = selectedCat1
             }
         }
     }
@@ -136,12 +138,6 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
         self.dismiss(animated: true, completion: {})
     }
     
-    
-    
-    
-    
-    
-    
     var doubletoStore : Double = 0
     @IBAction func formatNumbers(_ sender: Any) {
         let amountDisplay = Double(AmntTF.text!)
@@ -195,9 +191,27 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             desc = Description.text!
             recordDate(Calendar)
             let purchase = Purchase(name: name , price: amnt ,date: selectedDate, memo: desc)
+            Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.purchaseList[name] = purchase
+        
             //TODO: kin/joseph, your stuff goes here (Add to the map).
-            
-            
+            for(String, _) in (Dummy.user.budgetList){
+                for(String, _) in (Dummy.user.budgetList[String]?.categoryList)! {
+                    Dummy.user.budgetList[globalBudget]?.categoryList[String]?.calcUsed()
+                }
+                Dummy.user.budgetList[String]?.update()
+            }
+            DispatchQueue.main.async {
+                Dummy.dc.pushUserToFirebase(user: Dummy.user)
+                print("Add purchase \(Dummy.user)")
+                let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!)
+                let RemainRatio = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) / Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
+                
+                let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.recentIntervalResetString;
+                print((Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!)
+                if(RemainRatio*100 >= (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!){
+                    User.purchaseOverLimitNotification(Budgetname: Dummy.currentBudgetName, Categoryname: Dummy.currentCategoryName, AmountLeft: RemainBalance, timeRemain: time!, Repeat: (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationFrequency)!)
+                }
+            }
             
             //reloadMain and dismiss view!
             let notificationNme = NSNotification.Name("reloadMain")
