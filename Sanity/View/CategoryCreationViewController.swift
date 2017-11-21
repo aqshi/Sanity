@@ -47,16 +47,35 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
         myTableView.reloadData()
     }
     
-    var numCells : Int = 1
+    var numCells : Int = 4
     //Number of items to display, and which items to display
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numCells
     }
+    
+    let list = ["Food","Clothes","Entertainment", "Transportation" ]
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = Bundle.main.loadNibNamed("catCell", owner: self, options: nil)?.first as! catCell;
         let cell = myTableView.dequeueReusableCell(withIdentifier: "catCell", for: indexPath) as! catCell
+        makedefault()
         return cell
     }
+    
+    func makedefault() -> Double{
+        var count : Int = 0
+        for cell in myTableView.visibleCells {
+            if let customCell = cell as? catCell {
+               
+                customCell.nameField.text = list[count]
+                customCell.name = list[count]
+                
+            }
+            count += 1
+        }
+        
+        return 0
+    }
+    
     //Remove Item Functionality
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
             numCells -= 1
@@ -71,6 +90,8 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
     var budgList = [Double]()
     @IBAction func retrieveVals(_ sender: Any) {
         var budgetName : String = Dummy.currentBudgetName
+        
+        
         for cell in myTableView.visibleCells {
             if let customCell = cell as? catCell {
                 customCell.store()
