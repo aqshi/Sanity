@@ -135,7 +135,7 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
             let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!)
             let RemainRatio = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) / Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
 
-            let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.recentIntervalResetString;
+            let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.nextDateResetString;
             print("ttttttttttttttttttttttttttttttttttttttttttttttttt")
             print(RemainRatio)
             print((Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!)
