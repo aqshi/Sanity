@@ -26,6 +26,13 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
         // Do any additional setup after loading the view.
         tipPicker.dataSource = self
         tipPicker.delegate = self
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

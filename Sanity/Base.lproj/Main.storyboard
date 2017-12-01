@@ -265,6 +265,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Main Page" id="PFs-fZ-Orw">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="PAl-1L-tam">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vpl-8P-Sbv">
+                                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Colors"/>
+                                                <connections>
+                                                    <action selector="changeColors:" destination="hdl-d3-N4N" eventType="touchUpInside" id="KN0-Zf-w3V"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="E97-mU-1c2">
                                             <connections>
                                                 <segue destination="c1c-ck-hdR" kind="presentation" id="441-C1-2Bu"/>
@@ -1554,9 +1564,9 @@
         <image name="question" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UJZ-Op-upB"/>
+        <segue reference="OC0-k6-cuq"/>
         <segue reference="i1T-aY-Jvk"/>
-        <segue reference="fn8-uS-vHq"/>
+        <segue reference="rYj-UW-JBV"/>
         <segue reference="xg1-pT-yFW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
