@@ -23,7 +23,9 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         //so we can refresh this view form somewhere else
         let updater = NSNotification.Name("reloadMain")
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: updater, object: nil)
-        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +92,13 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         }
     }
     
+    @objc func swiped(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            if (self.tabBarController?.selectedIndex)! == 0 { 
+                self.tabBarController?.selectedIndex = 1
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
