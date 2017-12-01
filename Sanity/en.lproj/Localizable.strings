@@ -30,10 +30,13 @@
 
 "percentTag" = "Warn me at %";
 
+//"pickerCell2"
 "pickerTitleTag" = "Starting the nearest";
 
+//"pickerCell1"
 "pickerCellOneTitleTag" = "Reset Every";
 
+//"catCell"
 "catCellNameTitleTag" = "Name";
 
 "catCellAmountTitleTag" = "Budget Amount";
