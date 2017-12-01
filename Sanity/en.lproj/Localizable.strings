@@ -14,7 +14,7 @@
 "newButtonTag" = "New Budget";
 
 //"Analytics Page"
-"confirmButtonTag" = "Confirm";
+"analyticsConfirmButtonTag" = "Confirm";
 
 "analyticsTitleTag" = "Analytics";
 
@@ -40,3 +40,42 @@
 "catCellNameTitleTag" = "Name";
 
 "catCellAmountTitleTag" = "Budget Amount";
+
+//"Category Page"
+"TitleLabelTag" = "Purchases for this Category:";
+
+"newPurchaseButtonTag" = "New Purchase";
+
+"backButtonTag" = "Back";
+
+"editButtonTag" = "Edit Category";
+
+//"Budget Page"
+"titleLabelTag" = "Categories for this Budget:";
+
+"addCategoryButtonTag" = "Add Category";
+
+"backButtonTag" = "Back";
+
+"editButtonTag" = "Edit Budget";
+
+//"CatDisplayCell"
+"catDisplayCellRemainingTag" = "Remaining: $";
+
+"catDisplayCellSpentTag" = "/1.00 Spent";
+
+"catDisplayCellLimitTag" = "Limit:";
+
+//"TransactionCell"
+"onLabelTag" = "On: ";
+
+"moneySignLabelTag" = "$:";
+
+//"Transaction Page"
+"transactionNameTag" = "Name";
+
+"transactionAmountLabel" = "Amount";
+
+"transactionCreationConfirmTag" = "Confirm";
+
+"transactionCreationCancelTag" = "Cancel";

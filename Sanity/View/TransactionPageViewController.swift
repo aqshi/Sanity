@@ -10,12 +10,20 @@ import UIKit
 
 class TransactionPageViewController: UIViewController {
     
+    @IBOutlet weak var transactionNameLabel: UILabel!
+    @IBOutlet weak var transactionAmountLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         myDate.datePickerMode = UIDatePickerMode.date
-
+        
+        transactionNameLabel.text = NSLocalizedString("transactionNameTag", comment: "Tag for name label")
+        
+        transactionAmountLabel.text = NSLocalizedString("transactionAmountLabel", comment: "Tag for amount label")
+        confirmButton.setTitle(NSLocalizedString("transactionCreationConfirmTag", comment: "Tag for confirm button"), for: .normal)
+        
+        cancelButton.setTitle(NSLocalizedString("transactionCreationCancelTag", comment: "Tag for cancel button"), for: .normal)
         
         if(globalColor == 1){
             self.view.backgroundColor = UIColor .darkGray

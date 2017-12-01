@@ -282,7 +282,6 @@
 		D7BA83E51F92CA4200C89C8D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1DCDAD691FD0EDF80094DA62 /* Localizable.strings */,
 				D7C471BB1F904BC100BCBD8B /* ViewController.swift */,
 				D7FD0CC71F91A0D8002BDA41 /* MainSceneViewController.swift */,
 				D7FD0CCB1F91A9CE002BDA41 /* initialTabBarViewController.swift */,
@@ -309,6 +308,7 @@
 				F32F26061F94574D00C0387C /* TransCell.swift */,
 				F32F26071F94574D00C0387C /* TransCell.xib */,
 				D125909D1FC2EE0800E753FE /* AddViewController.swift */,
+				1DCDAD691FD0EDF80094DA62 /* Localizable.strings */,
 			);
 			path = View;
 			sourceTree = "<group>";

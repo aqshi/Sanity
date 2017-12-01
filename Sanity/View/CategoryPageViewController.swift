@@ -12,9 +12,14 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
     @IBOutlet weak var newButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = NSLocalizedString("TitleLabelTag", comment: "Tag for title label")
+        newButton.setTitle(NSLocalizedString("newPurchaseButtonTag", comment: "Tag for newPurchase button"), for: .normal)
+        backButton.setTitle(NSLocalizedString("backButtonTag", comment: "Tag for newPurchase button"), for: .normal)
+        editButton.setTitle(NSLocalizedString("editCategoryButtonTag", comment: "Tag for eidtCategory button"), for: .normal)
         myTableView.rowHeight = 100
         //register the custom cell for use as a normal prototype
         let nibName = UINib(nibName: "TransCell", bundle: nil)

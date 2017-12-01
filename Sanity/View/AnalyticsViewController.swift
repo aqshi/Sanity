@@ -13,6 +13,10 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
     @IBOutlet weak var confirmButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        confirmButton.setTitle(NSLocalizedString("analyticsConfirmButtonTag", comment: "tag for confirm button"), for: .normal)
+        
+        self.title = NSLocalizedString("analyticsTitleTag", comment: "Tag for title")
+        
         if(globalColor == 1){
             self.view.backgroundColor = UIColor .darkGray
         }
