@@ -10,9 +10,12 @@ import UIKit
 
 class pickerCell1: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var datePicker: UIPickerView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.text = NSLocalizedString("pickerCellOneTitleTag", comment: "Tag for title of pickerCell1")
         self.datePicker.delegate = self
         self.datePicker.dataSource = self
     }

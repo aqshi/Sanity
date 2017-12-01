@@ -1,0 +1,306 @@
+
+/* Class = "UILabel"; text = "$0.00"; ObjectID = "05H-vk-E8T"; */
+"05H-vk-E8T.text" = "$0.00";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "0kQ-ew-GKN"; */
+"0kQ-ew-GKN.title" = "Main";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "0xY-B1-Ub1"; */
+"0xY-B1-Ub1.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "Add Category"; ObjectID = "1fN-s0-TWE"; */
+"1fN-s0-TWE.normalTitle" = "Add Category";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "2xa-ro-yoo"; */
+"2xa-ro-yoo.title" = "Main";
+
+/* Class = "UITextField"; placeholder = "New Budget"; ObjectID = "3K2-Sj-UIk"; */
+"3K2-Sj-UIk.placeholder" = "New Budget";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "3xo-TP-SDW"; */
+"3xo-TP-SDW.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "Example Category"; ObjectID = "4T7-gW-z4X"; */
+"4T7-gW-z4X.normalTitle" = "Example Category";
+
+/* Class = "UILabel"; text = "Categories for this budget"; ObjectID = "5Do-iF-k9I"; */
+"5Do-iF-k9I.text" = "Categories for this budget";
+
+/* Class = "UILabel"; text = "Purchases for this Category:"; ObjectID = "5hm-06-PT4"; */
+"5hm-06-PT4.text" = "Purchases for this Category:";
+
+/* Class = "UIViewController"; title = "Edit Category"; ObjectID = "5hx-es-2Sw"; */
+"5hx-es-2Sw.title" = "Edit Category";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "6YN-ch-QLy"; */
+"6YN-ch-QLy.text" = "Name";
+
+/* Class = "UILabel"; text = "Reset"; ObjectID = "6kI-1i-bF8"; */
+"6kI-1i-bF8.text" = "Reset";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "8Yc-Sy-Co1"; */
+"8Yc-Sy-Co1.normalTitle" = "Back";
+
+/* Class = "UINavigationItem"; title = "Add Category"; ObjectID = "8fQ-PX-Rqd"; */
+"8fQ-PX-Rqd.title" = "Add Category";
+
+/* Class = "UITextField"; placeholder = "Name of purchase"; ObjectID = "8hd-4d-JwB"; */
+"8hd-4d-JwB.placeholder" = "Name of purchase";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "8r7-1d-oDd"; */
+"8r7-1d-oDd.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "An application that helps keep track of spending"; ObjectID = "93x-ee-i3O"; */
+"93x-ee-i3O.text" = "An application that helps keep track of spending";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "962-rm-K1y"; */
+"962-rm-K1y.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "99M-iR-bcN"; */
+"99M-iR-bcN.normalTitle" = "Confirm";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "9em-eX-GT2"; */
+"9em-eX-GT2.title" = "Main";
+
+/* Class = "UINavigationItem"; title = "Analytics"; ObjectID = "AAe-OA-VlS"; */
+"AAe-OA-VlS.title" = "Analytics";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "AEa-QJ-n1b"; */
+"AEa-QJ-n1b.title" = "Main";
+
+/* Class = "UIButton"; normalTitle = "Add Category"; ObjectID = "AoB-Bb-ibY"; */
+"AoB-Bb-ibY.normalTitle" = "Add Category";
+
+/* Class = "UILabel"; text = "Notification Frequency"; ObjectID = "AtC-K7-WhX"; */
+"AtC-K7-WhX.text" = "Notification Frequency";
+
+/* Class = "UITextField"; placeholder = "Category"; ObjectID = "Awp-nH-OZC"; */
+"Awp-nH-OZC.placeholder" = "Category";
+
+/* Class = "UIButton"; normalTitle = "Edit Interval Settings?"; ObjectID = "C2M-g2-1qD"; */
+"C2M-g2-1qD.normalTitle" = "Edit Interval Settings?";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "DaA-KY-JHO"; */
+"DaA-KY-JHO.title" = "Main";
+
+/* Class = "UIViewController"; title = "Analytics"; ObjectID = "Dop-hS-ctp"; */
+"Dop-hS-ctp.title" = "Analytics";
+
+/* Class = "UINavigationItem"; title = "Category Page"; ObjectID = "Gn8-mW-GDp"; */
+"Gn8-mW-GDp.title" = "Category Page";
+
+/* Class = "UISegmentedControl"; I9H-PV-URs.segmentTitles[0] = "Never"; ObjectID = "I9H-PV-URs"; */
+"I9H-PV-URs.segmentTitles[0]" = "Never";
+
+/* Class = "UISegmentedControl"; I9H-PV-URs.segmentTitles[1] = "Once"; ObjectID = "I9H-PV-URs"; */
+"I9H-PV-URs.segmentTitles[1]" = "Once";
+
+/* Class = "UISegmentedControl"; I9H-PV-URs.segmentTitles[2] = "Always"; ObjectID = "I9H-PV-URs"; */
+"I9H-PV-URs.segmentTitles[2]" = "Always";
+
+/* Class = "UIButton"; normalTitle = "New Purchase"; ObjectID = "K6y-eh-6aq"; */
+"K6y-eh-6aq.normalTitle" = "New Purchase";
+
+/* Class = "UIButton"; normalTitle = "Example Transaction"; ObjectID = "Kvn-4B-E7Z"; */
+"Kvn-4B-E7Z.normalTitle" = "Example Transaction";
+
+/* Class = "UITextField"; placeholder = "Optional Description"; ObjectID = "L3X-t2-b63"; */
+"L3X-t2-b63.placeholder" = "Optional Description";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "M34-5b-JMs"; */
+"M34-5b-JMs.text" = "+";
+
+/* Class = "UIViewController"; title = "Budget Page"; ObjectID = "M7u-uW-ibZ"; */
+"M7u-uW-ibZ.title" = "Budget Page";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "N4N-lt-XoS"; */
+"N4N-lt-XoS.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "OIF-xX-lzE"; */
+"OIF-xX-lzE.normalTitle" = "Back";
+
+/* Class = "UINavigationItem"; title = "Main Page"; ObjectID = "PFs-fZ-Orw"; */
+"PFs-fZ-Orw.title" = "Main Page";
+
+/* Class = "UIButton"; normalTitle = "Edit Threshold Settings?"; ObjectID = "PkW-aR-xY6"; */
+"PkW-aR-xY6.normalTitle" = "Edit Threshold Settings?";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "QB1-wJ-jjf"; */
+"QB1-wJ-jjf.normalTitle" = "Cancel";
+
+/* Class = "UITextField"; placeholder = "New Category"; ObjectID = "SaQ-7v-rBS"; */
+"SaQ-7v-rBS.placeholder" = "New Category";
+
+/* Class = "UINavigationItem"; title = "Transaction Creation"; ObjectID = "T8g-1g-geO"; */
+"T8g-1g-geO.title" = "Transaction Creation";
+
+/* Class = "UILabel"; text = "Starting Next:"; ObjectID = "TLT-Ee-cyt"; */
+"TLT-Ee-cyt.text" = "Starting Next:";
+
+/* Class = "UIButton"; normalTitle = "New Budget"; ObjectID = "U1t-Ob-261"; */
+"U1t-Ob-261.normalTitle" = "New Budget";
+
+/* Class = "UIButton"; normalTitle = "Edit Fixed Date Settings?"; ObjectID = "Uvy-vl-oGn"; */
+"Uvy-vl-oGn.normalTitle" = "Edit Fixed Date Settings?";
+
+/* Class = "UISegmentedControl"; V0w-7B-zgp.segmentTitles[0] = "Weekly"; ObjectID = "V0w-7B-zgp"; */
+"V0w-7B-zgp.segmentTitles[0]" = "Weekly";
+
+/* Class = "UISegmentedControl"; V0w-7B-zgp.segmentTitles[1] = "Biweekly"; ObjectID = "V0w-7B-zgp"; */
+"V0w-7B-zgp.segmentTitles[1]" = "Biweekly";
+
+/* Class = "UISegmentedControl"; V0w-7B-zgp.segmentTitles[2] = "Triweekly"; ObjectID = "V0w-7B-zgp"; */
+"V0w-7B-zgp.segmentTitles[2]" = "Triweekly";
+
+/* Class = "UISegmentedControl"; V0w-7B-zgp.segmentTitles[3] = "Monthly"; ObjectID = "V0w-7B-zgp"; */
+"V0w-7B-zgp.segmentTitles[3]" = "Monthly";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Wso-mU-THt"; */
+"Wso-mU-THt.text" = "Name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "XZ1-IP-tvN"; */
+"XZ1-IP-tvN.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "Edit Budget"; ObjectID = "Y2D-dJ-Amr"; */
+"Y2D-dJ-Amr.title" = "Edit Budget";
+
+/* Class = "UITabBarItem"; title = "Analytics"; ObjectID = "ZPs-Sz-2wZ"; */
+"ZPs-Sz-2wZ.title" = "Analytics";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "ZQk-Bt-nhb"; */
+"ZQk-Bt-nhb.text" = "Amount";
+
+/* Class = "UINavigationItem"; title = "Transaction Page"; ObjectID = "aQr-pM-shg"; */
+"aQr-pM-shg.title" = "Transaction Page";
+
+/* Class = "UINavigationItem"; title = "Budget Page"; ObjectID = "b7j-yB-sfR"; */
+"b7j-yB-sfR.title" = "Budget Page";
+
+/* Class = "UINavigationItem"; title = "Budget Creation"; ObjectID = "bJQ-eJ-yaq"; */
+"bJQ-eJ-yaq.title" = "Budget Creation";
+
+/* Class = "UILabel"; text = "Warn Me at:"; ObjectID = "bMG-mA-RUw"; */
+"bMG-mA-RUw.text" = "Warn Me at:";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "cL7-g4-xSl"; */
+"cL7-g4-xSl.text" = "Amount";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "cPK-Ii-Wf6"; */
+"cPK-Ii-Wf6.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "cRh-ph-ujF"; */
+"cRh-ph-ujF.normalTitle" = "Cancel";
+
+/* Class = "UITextField"; placeholder = "Amount of purchase"; ObjectID = "cV2-dH-skz"; */
+"cV2-dH-skz.placeholder" = "Amount of purchase";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "dSe-ha-3Vy"; */
+"dSe-ha-3Vy.normalTitle" = "Confirm";
+
+/* Class = "UITextField"; placeholder = "Budget"; ObjectID = "dpF-TU-gKn"; */
+"dpF-TU-gKn.placeholder" = "Budget";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "e5V-hk-F9p"; */
+"e5V-hk-F9p.text" = "Amount";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "eR2-Wb-Xby"; */
+"eR2-Wb-Xby.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "enN-N4-Cxq"; */
+"enN-N4-Cxq.text" = "Name";
+
+/* Class = "UIViewController"; title = "Add Category"; ObjectID = "enz-Hp-kqn"; */
+"enz-Hp-kqn.title" = "Add Category";
+
+/* Class = "UIViewController"; title = "Transaction Page"; ObjectID = "ftL-Yb-bx1"; */
+"ftL-Yb-bx1.title" = "Transaction Page";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "g8D-TN-WhA"; */
+"g8D-TN-WhA.title" = "Main";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "hAu-BW-PjU"; */
+"hAu-BW-PjU.title" = "Main";
+
+/* Class = "UINavigationItem"; title = "New Purchase"; ObjectID = "hHB-p9-tgJ"; */
+"hHB-p9-tgJ.title" = "New Purchase";
+
+/* Class = "UIViewController"; title = "Main"; ObjectID = "hdl-d3-N4N"; */
+"hdl-d3-N4N.title" = "Main";
+
+/* Class = "UIButton"; normalTitle = "Edit Budget"; ObjectID = "hmC-l3-QyO"; */
+"hmC-l3-QyO.normalTitle" = "Edit Budget";
+
+/* Class = "UITextField"; placeholder = "Optional Description"; ObjectID = "iyc-9K-KRv"; */
+"iyc-9K-KRv.placeholder" = "Optional Description";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "jDz-7N-n7a"; */
+"jDz-7N-n7a.normalTitle" = "Cancel";
+
+/* Class = "UIViewController"; title = "Category Page"; ObjectID = "kxF-mD-uSN"; */
+"kxF-mD-uSN.title" = "Category Page";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "l94-UY-z0m"; */
+"l94-UY-z0m.normalTitle" = "Log Out";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "mpJ-r5-hS8"; */
+"mpJ-r5-hS8.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Warn Me at %:"; ObjectID = "oAU-aR-AOp"; */
+"oAU-aR-AOp.text" = "Warn Me at %:";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "pOH-0I-zGV"; */
+"pOH-0I-zGV.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "pZ8-ma-8wt"; */
+"pZ8-ma-8wt.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "$anity"; ObjectID = "pqm-Bv-fhv"; */
+"pqm-Bv-fhv.text" = "$anity";
+
+/* Class = "UINavigationItem"; title = "Category Creation"; ObjectID = "puh-qQ-OSm"; */
+"puh-qQ-OSm.title" = "Category Creation";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "r6s-VZ-ADY"; */
+"r6s-VZ-ADY.text" = "Name:";
+
+/* Class = "UITextField"; placeholder = "New Transaction"; ObjectID = "rEy-0W-cQu"; */
+"rEy-0W-cQu.placeholder" = "New Transaction";
+
+/* Class = "UIViewController"; title = "Budget Creation"; ObjectID = "sD4-kg-1th"; */
+"sD4-kg-1th.title" = "Budget Creation";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "sjq-KA-ogz"; */
+"sjq-KA-ogz.normalTitle" = "Continue";
+
+/* Class = "UINavigationItem"; title = "Edit Category"; ObjectID = "tHs-Fz-ZCR"; */
+"tHs-Fz-ZCR.title" = "Edit Category";
+
+/* Class = "UIButton"; normalTitle = "Edit Category"; ObjectID = "tUB-C0-aly"; */
+"tUB-C0-aly.normalTitle" = "Edit Category";
+
+/* Class = "UIViewController"; title = "Edit Budget Page"; ObjectID = "uOV-Ih-WkH"; */
+"uOV-Ih-WkH.title" = "Edit Budget Page";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "uyF-zq-INZ"; */
+"uyF-zq-INZ.text" = "Name";
+
+/* Class = "UIViewController"; title = "Transaction Creation"; ObjectID = "vZG-xR-1uJ"; */
+"vZG-xR-1uJ.title" = "Transaction Creation";
+
+/* Class = "UIViewController"; title = "Category Creation"; ObjectID = "viL-Ig-Z9x"; */
+"viL-Ig-Z9x.title" = "Category Creation";
+
+/* Class = "UILabel"; text = "Budget Amount"; ObjectID = "wbh-eT-VlQ"; */
+"wbh-eT-VlQ.text" = "Budget Amount";
+
+/* Class = "UILabel"; text = "Budget Amount:"; ObjectID = "xn0-Cu-p0k"; */
+"xn0-Cu-p0k.text" = "Budget Amount:";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "xy4-d5-CdJ"; */
+"xy4-d5-CdJ.text" = "Name";
+
+/* Class = "UILabel"; text = "Reset Every:"; ObjectID = "yna-WI-Alv"; */
+"yna-WI-Alv.text" = "Reset Every:";
+
+/* Class = "UITextField"; placeholder = "Optional Description"; ObjectID = "ze1-gq-PUe"; */
+"ze1-gq-PUe.placeholder" = "Optional Description";

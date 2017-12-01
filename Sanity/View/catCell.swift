@@ -12,11 +12,15 @@ class catCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        nameLabel.text = NSLocalizedString("catCellNameTitleTag", comment: "Title tag for cat Cell name")
+        amountLabel.text = NSLocalizedString("catCellAmountTitleTag", comment: "Title tag for amount Cell name")
         self.nameField.delegate = self as? UITextFieldDelegate
         self.budgetField.delegate = self as? UITextFieldDelegate
         //nameField.text = "New Category"
         budgetField.text = "$0.00"
     }
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var budgetField: UITextField!
     
