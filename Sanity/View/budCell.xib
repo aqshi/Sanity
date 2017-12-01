@@ -81,7 +81,7 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tw-48-hnU">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tw-48-hnU">
                         <rect key="frame" x="166" y="8" width="72" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -97,6 +97,9 @@
                 <outlet property="dateReset" destination="WEg-ke-aTi" id="vxX-l0-SNg"/>
                 <outlet property="limit" destination="Raw-II-OtY" id="UME-R8-saN"/>
                 <outlet property="remaining" destination="19J-MY-TLW" id="u0v-7X-2tG"/>
+                <outlet property="remainingTitle" destination="gZz-4y-0y2" id="hZB-5Q-KZ1"/>
+                <outlet property="resetTitle" destination="3tw-48-hnU" id="K5b-zP-Be9"/>
+                <outlet property="totalLimitTitle" destination="0Va-EM-KxL" id="2IQ-SH-tya"/>
             </connections>
             <point key="canvasLocation" x="335" y="29"/>
         </tableViewCell>

@@ -6,9 +6,34 @@
   Copyright © 2017 Leftover System. All rights reserved.
 */
 
-"nameTag" = "名字";
+//"Main Page"
+"mainPageTitleTag" = "主页";
+
+"logoutButtonTag" = "退出";
+
+"newButtonTag" = "创建 Budget";
+
+//"Analytics Page"
+"confirmButtonTag" = "确认";
+
+"analyticsTitleTag" = "数据分析";
+
+//"budCell"
+"remainingLabelTag" = "剩余数目";
+
+"totalLimitLabelTag" = "总预算";
+
+"resetLabelTag" = "重置";
+
+//"BudgetCreation Page"
+"nameTitleTag" = "名字";
+
 "percentTag" = "此时请提醒我";
+
 "pickerTitleTag" = "更新频率";
+
 "pickerCellOneTitleTag" = "更新周期";
+
 "catCellNameTitleTag" = "名字";
+
 "catCellAmountTitleTag" = "Budget预算";
