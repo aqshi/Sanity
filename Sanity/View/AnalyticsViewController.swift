@@ -13,6 +13,12 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
     @IBOutlet weak var confirmButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
