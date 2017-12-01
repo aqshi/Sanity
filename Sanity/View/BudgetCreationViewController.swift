@@ -36,6 +36,16 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
                let updater = NSNotification.Name("reloadBud")
                    NotificationCenter.default.addObserver(self, selector: #selector(self.viewDidLoad), name: updater, object: nil)
         
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+            myTableView2.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+            myTableView2.backgroundColor = UIColor .white
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
