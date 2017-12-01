@@ -138,10 +138,32 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
     
     
     @IBAction func LogOff(_ sender: Any) {
+        let alertController = UIAlertController(
+            title: "Log out",
+            message: "Confirm to log out / Confirm來登出",
+            preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(
+            title: "Confirm",
+            style: .destructive,
+            handler: {(alert: UIAlertAction!) in self.logoutt()})
+        alertController.addAction(okAction)
+        
+        self.present(
+            alertController,
+            animated: true,
+            completion: nil)
+    }
+    func logoutt(){
         GIDSignIn.sharedInstance().signOut()
         performSegue(withIdentifier: "LoggedOut", sender: self)
     }
-    
     //Table Logic//Table Logic//Table Logic//Table Logic//Table Logic
     //Table Logic//Table Logic//Table Logic//Table Logic//Table Logic
     //Table Logic//Table Logic//Table Logic//Table Logic//Table Logic
