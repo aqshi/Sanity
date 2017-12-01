@@ -20,7 +20,7 @@ class BudgetCreationViewController: UIViewController , UITableViewDelegate , UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = NSLocalizedString("nameTag", comment: "tag of name")
+        nameLabel.text = NSLocalizedString("nameTitleTag", comment: "tag of name label")
         percentageLabel.text = NSLocalizedString("percentTag", comment: "tag of percent")
         //nameField.text = "New Budget"
         //sizes of our cells

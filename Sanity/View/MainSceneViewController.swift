@@ -16,6 +16,8 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
     @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = NSLocalizedString("mainPageTitleTag", comment: "Tag for main page title")
+        
         myTableView.rowHeight = 100
         //register the custom cell for use as a normal prototype
         let nibName = UINib(nibName: "budCell", bundle: nil)
@@ -27,6 +29,8 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        logoutButton.setTitle(NSLocalizedString("logoutButtonTag", comment: "text for logout button"), for: .normal)
+        newBudgetButton.setTitle(NSLocalizedString("newButtonTag", comment: "text for new budget button"), for: .normal)
         self.newBudgetButton.alpha = 0
         self.logoutButton.alpha = 0
         UIView.animate(withDuration: 0.4, delay: 0.3, options: .curveEaseOut, animations: {

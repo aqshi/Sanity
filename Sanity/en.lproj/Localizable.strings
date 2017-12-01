@@ -6,9 +6,34 @@
   Copyright © 2017 Leftover System. All rights reserved.
 */
 
-"nameTag" = "Name";
+//"Main Page"
+"mainPageTitleTag" = "Main";
+
+"logoutButtonTag" = "Log Out";
+
+"newButtonTag" = "New Budget";
+
+//"Analytics Page"
+"confirmButtonTag" = "Confirm";
+
+"analyticsTitleTag" = "Analytics";
+
+//"budCell"
+"remainingLabelTag" = "Remaining";
+
+"totalLimitLabelTag" = "Total Limit";
+
+"resetLabelTag" = "Resets";
+
+//"BudgetCreation Page"
+"nameTitleTag" = "Name";
+
 "percentTag" = "Warn me at %";
+
 "pickerTitleTag" = "Starting the nearest";
+
 "pickerCellOneTitleTag" = "Reset Every";
+
 "catCellNameTitleTag" = "Name";
+
 "catCellAmountTitleTag" = "Budget Amount";

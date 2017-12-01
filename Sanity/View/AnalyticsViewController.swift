@@ -13,6 +13,8 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
     @IBOutlet weak var confirmButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        confirmButton.setTitle(NSLocalizedString("confirmButtonTag", comment: "Tag for confirm button"), for: .normal)
+        self.title = NSLocalizedString("analyticsTitleTag", comment: "Tag for navigation bar title")
         self.confirmButton.alpha = 0
         self.BudgetTF.alpha = 0
         self.CategoryTF.alpha = 0
