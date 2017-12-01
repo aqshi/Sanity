@@ -26,9 +26,9 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         let updater = NSNotification.Name("reloadMain")
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: updater, object: nil)
 
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(swipeRight)
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
         
         if(globalColor == 1){
            self.view.backgroundColor = UIColor .darkGray
