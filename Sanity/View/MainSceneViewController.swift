@@ -16,6 +16,8 @@ var globalColor = 1;
 class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var newBudgetButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var colorButton: UIBarButtonItem!
+    @IBOutlet weak var changeColorButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = 100
@@ -46,11 +48,13 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
             globalColor = 1
             self.view.backgroundColor = UIColor .darkGray
             myTableView.backgroundColor = UIColor .darkGray
+            changeColorButton.setTitle("DayMode", for: .normal)
         }
         else{
             globalColor = 2
             self.view.backgroundColor = UIColor .white
             myTableView.backgroundColor = UIColor .white
+            changeColorButton.setTitle("NightMode", for: .normal)
         }
     }
     
