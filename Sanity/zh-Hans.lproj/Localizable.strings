@@ -14,7 +14,7 @@
 "newButtonTag" = "创建 Budget";
 
 //"Analytics Page"
-"confirmButtonTag" = "确认";
+"analyticsConfirmButtonTag" = "确认";
 
 "analyticsTitleTag" = "数据分析";
 
@@ -37,3 +37,42 @@
 "catCellNameTitleTag" = "名字";
 
 "catCellAmountTitleTag" = "Budget预算";
+
+//"Category Page"
+"TitleLabelTag" = "本类别的支出：";
+
+"newPurchaseButtonTag" = "新支出";
+
+"backButtonTag" = "返回";
+
+"editCategoryButtonTag" = "修改本类别";
+
+//"Budget Page"
+"titleLabelTag" = "本Budget内的类别:";
+
+"addCategoryButtonTag" = "增加类别";
+
+"backButtonTag" = "返回";
+
+"editBudgetButtonTag" = "修改本Budget";
+
+//"CatDisplayCell"
+"catDisplayCellRemainingTag" = "剩余：$";
+
+"catDisplayCellSpentTag" = "/1.00 已支出";
+
+"catDisplayCellLimitTag" = "预算:";
+
+//"TransactionCell"
+"onLabelTag" = "日期";
+
+"moneySignLabelTag" = "$:";
+
+//"Transaction Page"
+"transactionNameTag" = "名字";
+
+"transactionAmountLabel" = "数目";
+
+"transactionCreationConfirmTag" = "确认";
+
+"transactionCreationCancelTag" = "返回";

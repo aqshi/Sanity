@@ -9,9 +9,13 @@
 import UIKit
 
 class TransCell: UITableViewCell {
-
+    @IBOutlet weak var onLabel: UILabel!
+    @IBOutlet weak var moneySignLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        onLabel.text = NSLocalizedString("onLabelTag", comment: "tag for onLabel")
+        moneySignLabel.text = NSLocalizedString("moneySignLabelTag", comment: "tag for moneySignLabel")
         // Initialization code
     }
 

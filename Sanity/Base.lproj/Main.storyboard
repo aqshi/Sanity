@@ -889,6 +889,7 @@
                         <outlet property="backButton" destination="cPK-Ii-Wf6" id="vFb-TV-Mtm"/>
                         <outlet property="editButton" destination="hmC-l3-QyO" id="uyz-7V-YZQ"/>
                         <outlet property="myTableView" destination="WaW-Iy-DEA" id="FGR-8z-Br7"/>
+                        <outlet property="titleLabel" destination="5Do-iF-k9I" id="TPm-M0-apm"/>
                         <segue destination="kxF-mD-uSN" kind="show" identifier="toCatPage" id="rPw-gQ-Ydd"/>
                     </connections>
                 </viewController>
@@ -1317,6 +1318,7 @@
                         <outlet property="editButton" destination="tUB-C0-aly" id="cne-gS-leR"/>
                         <outlet property="myTableView" destination="al2-Jm-yQQ" id="kYs-Xi-N5M"/>
                         <outlet property="newButton" destination="K6y-eh-6aq" id="6Rw-Bg-bMD"/>
+                        <outlet property="titleLabel" destination="5hm-06-PT4" id="UuG-n7-swt"/>
                         <segue destination="ftL-Yb-bx1" kind="show" identifier="toTransPage" id="08T-tP-4uP"/>
                     </connections>
                 </viewController>
@@ -1443,6 +1445,8 @@
                         <outlet property="memoField" destination="iyc-9K-KRv" id="ZCF-oA-MKn"/>
                         <outlet property="myDate" destination="RfD-l8-P0q" id="r3p-QM-iOa"/>
                         <outlet property="nameField" destination="MQE-X4-dqJ" id="ZBy-oA-Z9j"/>
+                        <outlet property="transactionAmountLabel" destination="e5V-hk-F9p" id="p7T-ut-ITx"/>
+                        <outlet property="transactionNameLabel" destination="enN-N4-Cxq" id="0IK-RV-9ad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjw-5H-bPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1568,10 +1572,9 @@
         <image name="question" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OC0-k6-cuq"/>
-        <segue reference="i1T-aY-Jvk"/>
-        <segue reference="rYj-UW-JBV"/>
-        <segue reference="xg1-pT-yFW"/>
+        <segue reference="7EJ-Cr-8t2"/>
+        <segue reference="GnY-Th-XXH"/>
+        <segue reference="gWG-J9-3Ku"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

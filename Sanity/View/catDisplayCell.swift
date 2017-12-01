@@ -9,9 +9,15 @@
 import UIKit
 
 class catDisplayCell: UITableViewCell {
-
+    @IBOutlet weak var remainingLabel: UILabel!
+    @IBOutlet weak var spentLabel: UILabel!
+    @IBOutlet weak var limitLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        remainingLabel.text = NSLocalizedString("catDisplayCellRemainingTag", comment: "Tag for remaining label")
+        spentLabel.text = NSLocalizedString("catDisplayCellSpentTag", comment: "Tag for spent label")
+        limitLabel.text = NSLocalizedString("catDisplayCellLimitTag", comment: "Tag for limit label")
         // Initialization code
     }
 
