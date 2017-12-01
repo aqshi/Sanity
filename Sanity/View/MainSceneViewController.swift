@@ -11,6 +11,8 @@ import Firebase
 import FirebaseDatabase
 import GoogleSignIn
 
+var globalColor = 1;
+
 class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var newBudgetButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
@@ -24,6 +26,28 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         let updater = NSNotification.Name("reloadMain")
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: updater, object: nil)
         
+        if(globalColor == 1){
+           self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+        }
+    }
+    
+    
+    @IBAction func changeColors(_ sender: Any) {
+        if(globalColor == 2){
+            globalColor = 1
+            self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+        }
+        else{
+            globalColor = 2
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

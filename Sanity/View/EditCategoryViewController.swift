@@ -17,6 +17,12 @@ class EditCategoryViewController: UIViewController {
 
         
         // Do any additional setup after loading the view.
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

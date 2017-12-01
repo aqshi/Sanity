@@ -20,6 +20,9 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
         return 1;
     }
     
+    
+   
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(pickerView.tag == 1){
             return Dummy.user.budgetList.count
@@ -99,6 +102,13 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
         createToolbar()
         // Do any additional setup after loading the view.
         recordDate(self)
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
     }
     
     func check(){

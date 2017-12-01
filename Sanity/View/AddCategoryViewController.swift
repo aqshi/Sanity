@@ -18,6 +18,12 @@ class AddCategoryViewController: UIViewController {
         //nameField.text = "New Category"
         amountField.text = "$0.00"
         // Do any additional setup after loading the view.
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
