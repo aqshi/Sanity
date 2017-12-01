@@ -13,8 +13,15 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
     @IBOutlet weak var confirmButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-        confirmButton.setTitle(NSLocalizedString("confirmButtonTag", comment: "Tag for confirm button"), for: .normal)
-        self.title = NSLocalizedString("analyticsTitleTag", comment: "Tag for navigation bar title")
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
         self.confirmButton.alpha = 0
         self.BudgetTF.alpha = 0
         self.CategoryTF.alpha = 0
