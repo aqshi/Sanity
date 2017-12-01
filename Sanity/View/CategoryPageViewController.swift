@@ -26,6 +26,15 @@ class CategoryPageViewController: UIViewController,UITableViewDelegate, UITableV
         
         print(globalBudget)
         print(globalCat)
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+        }
     }
     
     override func didReceiveMemoryWarning() {

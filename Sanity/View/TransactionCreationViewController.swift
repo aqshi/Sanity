@@ -26,6 +26,13 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
         // Do any additional setup after loading the view.
         tipPicker.dataSource = self
         tipPicker.delegate = self
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -135,7 +142,7 @@ class TransactionCreationViewController: UIViewController , UIPickerViewDataSour
             let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!)
             let RemainRatio = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) / Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
 
-            let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.recentIntervalResetString;
+            let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.nextDateResetString;
             print("ttttttttttttttttttttttttttttttttttttttttttttttttt")
             print(RemainRatio)
             print((Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!)

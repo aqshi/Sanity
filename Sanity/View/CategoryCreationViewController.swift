@@ -19,6 +19,15 @@ class CategoryCreationViewController: UIViewController, UITableViewDelegate, UIT
         let nibName = UINib(nibName: "catCell", bundle: nil)
         myTableView.register(nibName, forCellReuseIdentifier: "catCell")
         // Do any additional setup after loading the view.
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -25,6 +25,14 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
         }, completion: nil)
     }
     
+    @objc func swiped(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .right {
+            if (self.tabBarController?.selectedIndex)! == 1 {
+                self.tabBarController?.selectedIndex = 0
+            }
+        }
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
