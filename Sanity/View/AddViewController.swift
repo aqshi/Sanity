@@ -20,6 +20,9 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
         return 1;
     }
     
+    
+   
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(pickerView.tag == 1){
             return Dummy.user.budgetList.count
@@ -91,14 +94,27 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.DoneButton.isEnabled = false;
-        for (x,_) in Dummy.user.budgetList{
-            budgetlistHere1.append(x)
+        if(Dummy.user2.budgetList.count > 0) {
+            for (x,_) in Dummy.user2.budgetList{
+                budgetlistHere1.append(x)
+            }
+        } else {
+            for (x,_) in Dummy.user.budgetList{
+                budgetlistHere1.append(x)
+            }
         }
         AmntTF.keyboardType = UIKeyboardType.decimalPad;
         createBudgetPicker()
         createToolbar()
         // Do any additional setup after loading the view.
         recordDate(self)
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
     }
     
     func check(){
@@ -206,7 +222,7 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
                 let RemainBalance = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!) - Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!)
                 let RemainRatio = Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountUsed)!) / Double((Dummy.user.budgetList[Dummy.currentBudgetName]?.categoryList[Dummy.currentCategoryName]?.amountLimit)!)
                 
-                let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.recentIntervalResetString;
+                let time = Dummy.user.budgetList[Dummy.currentBudgetName]?.nextDateResetString;
                 print((Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!)
                 if(RemainRatio*100 >= (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationPercent)!){
                     User.purchaseOverLimitNotification(Budgetname: Dummy.currentBudgetName, Categoryname: Dummy.currentCategoryName, AmountLeft: RemainBalance, timeRemain: time!, Repeat: (Dummy.user.budgetList[Dummy.currentBudgetName]?.notificationFrequency)!)

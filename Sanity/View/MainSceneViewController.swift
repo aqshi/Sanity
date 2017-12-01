@@ -11,9 +11,13 @@ import Firebase
 import FirebaseDatabase
 import GoogleSignIn
 
+var globalColor = 1;
+
 class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var newBudgetButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var colorButton: UIBarButtonItem!
+    @IBOutlet weak var changeColorButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = 100
@@ -23,7 +27,35 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         //so we can refresh this view form somewhere else
         let updater = NSNotification.Name("reloadMain")
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: updater, object: nil)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
         
+        if(globalColor == 1){
+           self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+        }
+    }
+    
+    
+    @IBAction func changeColors(_ sender: Any) {
+        if(globalColor == 2){
+            globalColor = 1
+            self.view.backgroundColor = UIColor .darkGray
+            myTableView.backgroundColor = UIColor .darkGray
+            changeColorButton.setTitle("DayMode", for: .normal)
+        }
+        else{
+            globalColor = 2
+            self.view.backgroundColor = UIColor .white
+            myTableView.backgroundColor = UIColor .white
+            changeColorButton.setTitle("NightMode", for: .normal)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +122,13 @@ class MainSceneViewController: UIViewController ,UITableViewDelegate, UITableVie
         }
     }
     
+    @objc func swiped(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            if (self.tabBarController?.selectedIndex)! == 0 { 
+                self.tabBarController?.selectedIndex = 1
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

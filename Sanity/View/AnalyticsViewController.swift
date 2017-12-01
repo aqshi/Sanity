@@ -13,6 +13,15 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
     @IBOutlet weak var confirmButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
         self.confirmButton.alpha = 0
         self.BudgetTF.alpha = 0
         self.CategoryTF.alpha = 0
@@ -21,6 +30,14 @@ class AnalyticsViewController: UIViewController, UIPickerViewDataSource,UIPicker
             self.BudgetTF.alpha = 1
             self.CategoryTF.alpha = 1
         }, completion: nil)
+    }
+    
+    @objc func swiped(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .right {
+            if (self.tabBarController?.selectedIndex)! == 1 {
+                self.tabBarController?.selectedIndex = 0
+            }
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

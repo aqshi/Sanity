@@ -16,6 +16,13 @@ class TransactionPageViewController: UIViewController {
         super.viewDidLoad()
         myDate.datePickerMode = UIDatePickerMode.date
 
+        
+        if(globalColor == 1){
+            self.view.backgroundColor = UIColor .darkGray
+        }
+        else{
+            self.view.backgroundColor = UIColor .white
+        }
         //First we need to populate with stuff already there
     }
     

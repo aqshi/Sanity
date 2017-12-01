@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sz1-Hq-Uxb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sz1-Hq-Uxb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -265,6 +265,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Main Page" id="PFs-fZ-Orw">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="PAl-1L-tam">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vpl-8P-Sbv">
+                                                <rect key="frame" x="16" y="7" width="66" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="DayMode"/>
+                                                <connections>
+                                                    <action selector="changeColors:" destination="hdl-d3-N4N" eventType="touchUpInside" id="KN0-Zf-w3V"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="E97-mU-1c2">
                                             <connections>
                                                 <segue destination="c1c-ck-hdR" kind="presentation" id="441-C1-2Bu"/>
@@ -318,6 +328,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="cards" id="hAu-BW-PjU"/>
                     <connections>
+                        <outlet property="changeColorButton" destination="vpl-8P-Sbv" id="f32-1d-Sfc"/>
+                        <outlet property="colorButton" destination="PAl-1L-tam" id="LuF-Kd-OSZ"/>
                         <outlet property="logoutButton" destination="l94-UY-z0m" id="y2p-g8-xrA"/>
                         <outlet property="myTableView" destination="mXO-bm-A8K" id="o0z-QQ-f1s"/>
                         <outlet property="newBudgetButton" destination="U1t-Ob-261" id="iNJ-Qt-d8d"/>
@@ -1556,9 +1568,12 @@
         <image name="question" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="OC0-k6-cuq"/>
         <segue reference="i1T-aY-Jvk"/>
         <segue reference="fn8-uS-vHq"/>
         <segue reference="62y-6k-aIU"/>
+        <segue reference="rYj-UW-JBV"/>
+        <segue reference="xg1-pT-yFW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
