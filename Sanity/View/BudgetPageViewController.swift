@@ -25,7 +25,7 @@ class BudgetPageViewController: UIViewController ,UITableViewDelegate, UITableVi
         titleLabel.text = NSLocalizedString("titleLabelTag", comment: "Tag for the title")
         addButton.setTitle(NSLocalizedString("addCategoryButtonTag", comment: "Tag for add Category button"), for: .normal)
         backButton.setTitle(NSLocalizedString("backButtonTag", comment: "Tag for Back button"), for: .normal)
-        editButton.setTitle(NSLocalizedString("editBudgetButtonTag", comment: "Tag for editBudget button"), for: .normal)
+        editButton.setTitle(NSLocalizedString("budgetPageEditBudgetButtonTag", comment: "Tag for editBudget button"), for: .normal)
         myTableView.reloadData()
         myTableView.rowHeight = 100
         //register the custom cell for use as a normal prototype
