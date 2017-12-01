@@ -637,7 +637,9 @@
                         <outlet property="myTableView" destination="x01-XH-HaJ" id="ThQ-Tw-O57"/>
                         <outlet property="myTableView2" destination="UPK-N4-6Hr" id="Uj6-p0-Aib"/>
                         <outlet property="nameField" destination="3K2-Sj-UIk" id="YHU-dm-2y9"/>
+                        <outlet property="nameLabel" destination="uyF-zq-INZ" id="D98-iB-eEp"/>
                         <outlet property="percentPicker" destination="NoZ-AP-UFI" id="3Js-GR-qOr"/>
+                        <outlet property="percentageLabel" destination="oAU-aR-AOp" id="sfC-nT-scP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMO-yD-aid" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1556,7 +1558,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="i1T-aY-Jvk"/>
         <segue reference="fn8-uS-vHq"/>
-        <segue reference="xg1-pT-yFW"/>
+        <segue reference="62y-6k-aIU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

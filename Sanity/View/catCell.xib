@@ -23,14 +23,14 @@
                         <rect key="frame" x="8" y="13" width="50" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Budget Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5if-0x-72I">
                         <rect key="frame" x="8" y="52" width="125" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d2E-Y0-pmQ">
@@ -56,12 +56,14 @@
                         </connections>
                     </textField>
                 </subviews>
-                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.40807722734708646" green="0.7639990482233503" blue="0.71374796117853645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amountLabel" destination="5if-0x-72I" id="MzZ-bd-bc6"/>
                 <outlet property="budgetField" destination="PzU-Es-HU3" id="rUy-MD-aUy"/>
                 <outlet property="nameField" destination="d2E-Y0-pmQ" id="Ujs-hz-TR4"/>
+                <outlet property="nameLabel" destination="YCK-5L-BAS" id="eXi-9N-5ox"/>
             </connections>
             <point key="canvasLocation" x="34" y="77"/>
         </tableViewCell>
