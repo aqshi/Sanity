@@ -48,7 +48,7 @@
 
 "backButtonTag" = "Back";
 
-"editButtonTag" = "Edit Category";
+"categoryPageEditButtonTag" = "Edit Category";
 
 //"Budget Page"
 "titleLabelTag" = "Categories for this Budget:";
@@ -57,7 +57,7 @@
 
 "backButtonTag" = "Back";
 
-"editButtonTag" = "Edit Budget";
+"budgetPageEditBudgetButtonTag" = "Edit Budget";
 
 //"CatDisplayCell"
 "catDisplayCellRemainingTag" = "Remaining: $";

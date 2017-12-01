@@ -45,7 +45,7 @@
 
 "backButtonTag" = "返回";
 
-"editCategoryButtonTag" = "修改本类别";
+"categoryPageEditButtonTag" = "修改本类别";
 
 //"Budget Page"
 "titleLabelTag" = "本Budget内的类别:";
@@ -54,7 +54,7 @@
 
 "backButtonTag" = "返回";
 
-"editBudgetButtonTag" = "修改本Budget";
+"budgetPageEditBudgetButtonTag" = "修改本Budget";
 
 //"CatDisplayCell"
 "catDisplayCellRemainingTag" = "剩余：$";
