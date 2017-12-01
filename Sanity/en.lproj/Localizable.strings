@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Sanity
+
+  Created by MaximilianZeng on 11/30/17.
+  Copyright © 2017 Leftover System. All rights reserved.
+*/
+
+"nameTag" = "Name";
+"percentTag" = "Warn me at %";
+"pickerTitleTag" = "Starting the nearest";
+"pickerCellOneTitleTag" = "Reset Every";
+"catCellNameTitleTag" = "Name";
+"catCellAmountTitleTag" = "Budget Amount";

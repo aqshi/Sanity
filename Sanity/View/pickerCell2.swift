@@ -12,9 +12,11 @@ class pickerCell2: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate
     
     @IBOutlet weak var dayPicker: UIPickerView!
     @IBOutlet weak var interval: UISegmentedControl!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.text = NSLocalizedString("pickerTitleTag", comment: "Starting the nearest")
         self.dayPicker.delegate = self
         self.dayPicker.dataSource = self
     }

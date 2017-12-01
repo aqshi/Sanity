@@ -13,10 +13,15 @@ import UIKit
 class BudgetCreationViewController: UIViewController , UITableViewDelegate , UITableViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate{
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
     
     var names : [String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = NSLocalizedString("nameTag", comment: "tag of name")
+        percentageLabel.text = NSLocalizedString("percentTag", comment: "tag of percent")
         //nameField.text = "New Budget"
         //sizes of our cells
         myTableView.rowHeight = 70
